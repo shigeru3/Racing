@@ -36,18 +36,4 @@ public class RaceManager : MonoBehaviour {
 			break;
 		}
 	}
-	private void OnGUI() {
-		GUILayout.BeginVertical (GUILayout.Width (400));
-		switch (State) {
-		case RaceStates.ready:
-			GUILayout.Box (string.Format ("{0}", System.Math.Ceiling (timer % 60f)), GUILayout.Width (400));
-			break;
-		case RaceStates.go:
-		case RaceStates.goal:
-			GUILayout.Box (System.Math.Round(rap, 2).ToString(), GUILayout.Width (400));
-			break;
-		default:
-			break;
-		}
-	}
 }
