@@ -34,52 +34,52 @@ public float smoothDistance = 1.0f;
 public float smoothSurDistance = 3.0f;
 private bool handleInsertFlag;
 public bool handleVegetation = true;
-public float OCOCODCCDD = 2.0f;
-public float ODDQODQCOO = 1f;
+public float OCQCQQOCCQ = 2.0f;
+public float ODCOOQCCCQ = 1f;
 public int materialType = 0;
 String[] materialStrings;
 public string uname;
 public string email;
 private MarkerScript[] mSc;
 
-private bool OODODDCDQQ;
-private bool[] OQDDCQCCDQ = null;
-private bool[] OODQCQCDQO = null;
-public string[] ODODQCCDOC;
+private bool OQQOOODDCO;
+private bool[] OOCCDOCCDC = null;
+private bool[] OOCOQDCQQQ = null;
+public string[] OQDODQDOCO;
 public string[] ODODQOQO;
 public int[] ODODQOQOInt;
-public int ODDDQCOOQD = -1;
-public int OODQCOQQQQ = -1;
-static public GUISkin OODCOCOOCC;
-static public GUISkin OQQQCCOOOQ;
-public bool OCDCOQDCDQ = false;
+public int OQOQOOOQQO = -1;
+public int OCCDDDDDCD = -1;
+static public GUISkin OOOODDDODC;
+static public GUISkin OCOQCDCDCO;
+public bool OQOQOOOCQO = false;
 private Vector3 cPos;
 private Vector3 ePos;
-public bool ODQQCDQDQD;
-static public Texture2D OQQOCCQOOC;
+public bool OQQODCQODC;
+static public Texture2D OOOCCQQQOC;
 public int markers = 1;
-public OCQCDCCDOC OQCODQCQOC;
+public OQQDCCCQDQ OODODOQQOD;
 private GameObject ODOQDQOO;
-public bool OOCQCCQOQQ;
+public bool OCCDOQDQQD;
 public bool doTerrain;
-private Transform ODQDODOODQ = null;
-public GameObject[] ODQDODOODQs;
-private static string OCDQCCOCOC = null;
+private Transform OCCQQCQQOQ = null;
+public GameObject[] OCCQQCQQOQs;
+private static string OCOCCQOCDD = null;
 public Transform obj;
-private string OQQODDQQOO;
+private string OQQODQQDOO;
 public static string erInit = "";
-static public Transform OQCQDODCQQ;
-private RoadObjectScript ODOOCQDQCD;
+static public Transform OCCDOQCCQQ;
+private RoadObjectScript OQQOQOOOOO;
 public bool flyby;
 
 
 private Vector3 pos;
 private float fl;
 private float oldfl;
-private bool OQDDDDCCQC;
-private bool OCOCQOQDQQ;
-private bool OCQOOQCQQD;
-public Transform OCCQOQDDDO;
+private bool ODDQDDODOC;
+private bool OCDQCCQDDD;
+private bool ODDQDDQOCO;
+public Transform OOODODOQDC;
 public int OdQODQOD = 1;
 public float OOQQQDOD = 0f;
 public float OOQQQDODOffset = 0f;
@@ -114,8 +114,8 @@ private TextAnchor origAnchor;
 public bool autoODODDQQO;
 public Texture2D roadTexture;
 public Texture2D roadMaterial;
-public string[] OQDDOCDDOO;
-public string[] OCCCCCOOOQ;
+public string[] OOQOOQCDDQ;
+public string[] OOQCDQCQCQ;
 public int selectedWaterMaterial;
 public int selectedWaterScript;
 private bool doRestore = false;
@@ -139,54 +139,58 @@ public bool sosBuild = false;
 public float splinePos = 0;
 public float camHeight = 3;
 public Vector3 splinePosV3 = Vector3.zero;
+public bool blendFlag; 
+public float startBlendDistance = 5;
+public float endBlendDistance = 5;
 public bool iOS = false;
-public void OCOOCQODQD(List<ODODDQQO> arr, String[] DOODQOQO, String[] OODDQOQO){
+static public string extensionPath = "";
+public void OOCCOODQQD(List<ODODDQQO> arr, String[] DOODQOQO, String[] OODDQOQO){
 
-ODOODDDODD(transform, arr, DOODQOQO, OODDQOQO);
+ODOOCOCCQQ(transform, arr, DOODQOQO, OODDQOQO);
 }
-public void OQCDCQOQDO(MarkerScript markerScript){
+public void ODDCDCOQQQ(MarkerScript markerScript){
 
-ODQDODOODQ = markerScript.transform;
+OCCQQCQQOQ = markerScript.transform;
 
 
 
 List<GameObject> tmp = new List<GameObject>();
-for(int i=0;i<ODQDODOODQs.Length;i++){
-if(ODQDODOODQs[i] != markerScript.gameObject)tmp.Add(ODQDODOODQs[i]);
+for(int i=0;i<OCCQQCQQOQs.Length;i++){
+if(OCCQQCQQOQs[i] != markerScript.gameObject)tmp.Add(OCCQQCQQOQs[i]);
 }
 
 
 
 
 tmp.Add(markerScript.gameObject);
-ODQDODOODQs = tmp.ToArray();
-ODQDODOODQ = markerScript.transform;
+OCCQQCQQOQs = tmp.ToArray();
+OCCQQCQQOQ = markerScript.transform;
 
-OQCODQCQOC.OQQDCQDOCD(ODQDODOODQ, ODQDODOODQs, markerScript.OQCQOQCQCC, markerScript.OQDOCODDQO, OCCQOQDDDO, out markerScript.ODQDODOODQs, out markerScript.trperc, ODQDODOODQs);
+OODODOQQOD.OCODQOQQDQ(OCCQQCQQOQ, OCCQQCQQOQs, markerScript.OOOCCQCDQO, markerScript.OCCQCQOCQQ, OOODODOQDC, out markerScript.OCCQQCQQOQs, out markerScript.trperc, OCCQQCQQOQs);
 
-OODQCOQQQQ = -1;
+OCCDDDDDCD = -1;
 }
-public void ODCCCDCCDQ(MarkerScript markerScript){
-if(markerScript.OQDOCODDQO != markerScript.ODOOQQOO || markerScript.OQDOCODDQO != markerScript.ODOOQQOO){
-OQCODQCQOC.OQQDCQDOCD(ODQDODOODQ, ODQDODOODQs, markerScript.OQCQOQCQCC, markerScript.OQDOCODDQO, OCCQOQDDDO, out markerScript.ODQDODOODQs, out markerScript.trperc, ODQDODOODQs);
-markerScript.ODQDOQOO = markerScript.OQCQOQCQCC;
-markerScript.ODOOQQOO = markerScript.OQDOCODDQO;
+public void OOQCDDQCQD(MarkerScript markerScript){
+if(markerScript.OCCQCQOCQQ != markerScript.ODOOQQOO || markerScript.OCCQCQOCQQ != markerScript.ODOOQQOO){
+OODODOQQOD.OCODQOQQDQ(OCCQQCQQOQ, OCCQQCQQOQs, markerScript.OOOCCQCDQO, markerScript.OCCQCQOCQQ, OOODODOQDC, out markerScript.OCCQQCQQOQs, out markerScript.trperc, OCCQQCQQOQs);
+markerScript.ODQDOQOO = markerScript.OOOCCQCDQO;
+markerScript.ODOOQQOO = markerScript.OCCQCQOCQQ;
 }
-if(ODOOCQDQCD.autoUpdate) OQDODQOODQ(ODOOCQDQCD.geoResolution, false, false);
+if(OQQOQOOOOO.autoUpdate) OCQDOCOQDO(OQQOQOOOOO.geoResolution, false, false);
 }
 public void ResetMaterials(MarkerScript markerScript){
-if(OQCODQCQOC != null)OQCODQCQOC.OQQDCQDOCD(ODQDODOODQ, ODQDODOODQs, markerScript.OQCQOQCQCC, markerScript.OQDOCODDQO, OCCQOQDDDO, out markerScript.ODQDODOODQs, out markerScript.trperc, ODQDODOODQs);
+if(OODODOQQOD != null)OODODOQQOD.OCODQOQQDQ(OCCQQCQQOQ, OCCQQCQQOQs, markerScript.OOOCCQCDQO, markerScript.OCCQCQOCQQ, OOODODOQDC, out markerScript.OCCQQCQQOQs, out markerScript.trperc, OCCQQCQQOQs);
 }
-public void ODOODCODQC(MarkerScript markerScript){
-if(markerScript.OQDOCODDQO != markerScript.ODOOQQOO){
-OQCODQCQOC.OQQDCQDOCD(ODQDODOODQ, ODQDODOODQs, markerScript.OQCQOQCQCC, markerScript.OQDOCODDQO, OCCQOQDDDO, out markerScript.ODQDODOODQs, out markerScript.trperc, ODQDODOODQs);
-markerScript.ODOOQQOO = markerScript.OQDOCODDQO;
+public void OCDODQOQCC(MarkerScript markerScript){
+if(markerScript.OCCQCQOCQQ != markerScript.ODOOQQOO){
+OODODOQQOD.OCODQOQQDQ(OCCQQCQQOQ, OCCQQCQQOQs, markerScript.OOOCCQCDQO, markerScript.OCCQCQOCQQ, OOODODOQDC, out markerScript.OCCQQCQQOQs, out markerScript.trperc, OCCQQCQQOQs);
+markerScript.ODOOQQOO = markerScript.OCCQCQOCQQ;
 }
-OQDODQOODQ(ODOOCQDQCD.geoResolution, false, false);
+OCQDOCOQDO(OQQOQOOOOO.geoResolution, false, false);
 }
-private void ODDQODCQDQ(string ctrl, MarkerScript markerScript){
+private void OCOCDCCCDQ(string ctrl, MarkerScript markerScript){
 int i = 0;
-foreach(Transform tr in markerScript.ODQDODOODQs){
+foreach(Transform tr in markerScript.OCCQQCQQOQs){
 MarkerScript wsScript = (MarkerScript) tr.GetComponent<MarkerScript>();
 if(ctrl == "rs") wsScript.LeftSurrounding(markerScript.rs - markerScript.ODOQQOOO, markerScript.trperc[i]);
 else if(ctrl == "ls") wsScript.RightSurrounding(markerScript.ls - markerScript.DODOQQOO, markerScript.trperc[i]);
@@ -198,27 +202,27 @@ else if(ctrl == "floorDepth") wsScript.FloorDepth(markerScript.floorDepth - mark
 i++;
 }
 }
-public void OQQOCCDODC(){
-if(markers > 1) OQDODQOODQ(ODOOCQDQCD.geoResolution, false, false);
+public void OCCQDQQDCD(){
+if(markers > 1) OCQDOCOQDO(OQQOQOOOOO.geoResolution, false, false);
 }
-public void ODOODDDODD(Transform tr, List<ODODDQQO> arr, String[] DOODQOQO, String[] OODDQOQO){
+public void ODOOCOCCQQ(Transform tr, List<ODODDQQO> arr, String[] DOODQOQO, String[] OODDQOQO){
 version = "2.5.6";
-OODCOCOOCC = (GUISkin)Resources.Load("ER3DSkin", typeof(GUISkin));
+OOOODDDODC = (GUISkin)Resources.Load("ER3DSkin", typeof(GUISkin));
 
 
-OQQOCCQOOC = (Texture2D)Resources.Load("ER3DLogo", typeof(Texture2D));
+OOOCCQQQOC = (Texture2D)Resources.Load("ER3DLogo", typeof(Texture2D));
 if(RoadObjectScript.objectStrings == null){
 RoadObjectScript.objectStrings = new string[3];
 RoadObjectScript.objectStrings[0] = "Road Object"; RoadObjectScript.objectStrings[1]="River Object";RoadObjectScript.objectStrings[2]="Procedural Mesh Object";
 }
 obj = tr;
-OQCODQCQOC = new OCQCDCCDOC();
-ODOOCQDQCD = obj.GetComponent<RoadObjectScript>();
+OODODOQQOD = new OQQDCCCQDQ();
+OQQOQOOOOO = obj.GetComponent<RoadObjectScript>();
 foreach(Transform child in obj){
-if(child.name == "Markers") OCCQOQDDDO = child;
+if(child.name == "Markers") OOODODOQDC = child;
 }
 RoadObjectScript[] rscrpts = (RoadObjectScript[])FindObjectsOfType(typeof(RoadObjectScript));
-OCQCDCCDOC.terrainList.Clear();
+OQQDCCCQDQ.terrainList.Clear();
 Terrain[] terrains = (Terrain[])FindObjectsOfType(typeof(Terrain));
 foreach(Terrain terrain in terrains) {
 Terrains t = new Terrains();
@@ -231,9 +235,9 @@ t.id = id;
 }else{
 t.id = terrain.gameObject.GetComponent<EasyRoads3DTerrainID>().terrainid;
 }
-OQCODQCQOC.OQOOCOCDDQ(t);
+OQQDCCCQDQ.OOCDCOQQCD(t);
 }
-OQCDOODQQQ.OQOOCOCDDQ();
+OQOCOOCCQO.OOCDCOQQCD();
 if(roadMaterialEdit == null){
 roadMaterialEdit = (Material)Resources.Load("materials/roadMaterialEdit", typeof(Material));
 }
@@ -242,33 +246,35 @@ GameObject road = new GameObject("road");
 road.transform.parent = transform;
 }
 
-OQCODQCQOC.OQQDOCCQCD(obj, OCDQCCOCOC, ODOOCQDQCD.roadWidth, surfaceOpacity, out ODQQCDQDQD, out indent, applyAnimation, waveSize, waveHeight);
-OQCODQCQOC.ODDQODQCOO = ODDQODQCOO;
-OQCODQCQOC.OCOCODCCDD = OCOCODCCDD;
-OQCODQCQOC.OdQODQOD = OdQODQOD + 1;
-OQCODQCQOC.OOQQQDOD = OOQQQDOD;
-OQCODQCQOC.OOQQQDODOffset = OOQQQDODOffset;
-OQCODQCQOC.OOQQQDODLength = OOQQQDODLength;
-OQCODQCQOC.objectType = objectType;
-OQCODQCQOC.snapY = snapY;
-OQCODQCQOC.terrainRendered = OOCQCCQOQQ;
-OQCODQCQOC.handleVegetation = handleVegetation;
-OQCODQCQOC.raise = raise;
-OQCODQCQOC.roadResolution = roadResolution;
-OQCODQCQOC.multipleTerrains = multipleTerrains;
-OQCODQCQOC.editRestore = editRestore;
-OQCODQCQOC.roadMaterialEdit = roadMaterialEdit;
-OQCODQCQOC.renderRoad = renderRoad;
-OQCODQCQOC.rscrpts = rscrpts.Length;
+OODODOQQOD.OCOOQCDOOD(obj, OCOCCQOCDD, OQQOQOOOOO.roadWidth, surfaceOpacity, out OQQODCQODC, out indent, applyAnimation, waveSize, waveHeight);
+OODODOQQOD.ODCOOQCCCQ = ODCOOQCCCQ;
+OODODOQQOD.OCQCQQOCCQ = OCQCQQOCCQ;
+OODODOQQOD.OdQODQOD = OdQODQOD + 1;
+OODODOQQOD.OOQQQDOD = OOQQQDOD;
+OODODOQQOD.OOQQQDODOffset = OOQQQDODOffset;
+OODODOQQOD.OOQQQDODLength = OOQQQDODLength;
+OODODOQQOD.objectType = objectType;
+OODODOQQOD.snapY = snapY;
+OODODOQQOD.terrainRendered = OCCDOQDQQD;
+OODODOQQOD.handleVegetation = handleVegetation;
+OODODOQQOD.raise = raise;
+OODODOQQOD.roadResolution = roadResolution;
+OODODOQQOD.multipleTerrains = multipleTerrains;
+OODODOQQOD.editRestore = editRestore;
+OODODOQQOD.roadMaterialEdit = roadMaterialEdit;
+OODODOQQOD.renderRoad = renderRoad;
+OODODOQQOD.rscrpts = rscrpts.Length;
+OODODOQQOD.blendFlag = blendFlag; 
+OODODOQQOD.startBlendDistance = startBlendDistance;
+OODODOQQOD.endBlendDistance = endBlendDistance;
+if(backupLocation == 0)OOCCCOCCCC.backupFolder = "/EasyRoads3D";
+else OOCCCOCCCC.backupFolder =  OOCCCOCCCC.extensionPath + "/Backups";
 
-if(backupLocation == 0)OOCDCOQDQC.backupFolder = "/EasyRoads3D";
-else OOCDCOQDQC.backupFolder =  "/Assets/EasyRoads3D/backups";
-
-ODODQOQO = OQCODQCQOC.ODDDCOQDCC();
-ODODQOQOInt = OQCODQCQOC.OCDDCDCCQD();
+ODODQOQO = OODODOQQOD.OOCCQODDOD();
+ODODQOQOInt = OODODOQQOD.OCOCDOODOC();
 
 
-if(OOCQCCQOQQ){
+if(OCCDOQDQQD){
 
 
 
@@ -277,34 +283,34 @@ doRestore = true;
 }
 
 
-ODDCCCQCOC();
+ODDOOCQODD();
 
-if(arr != null || ODODQOOQ == null) OOCQQQQQQQ(arr, DOODQOQO, OODDQOQO);
+if(arr != null || ODODQOOQ == null) OQQCOCCCQO(arr, DOODQOQO, OODDQOQO);
 
 
 if(doRestore) return;
 }
 public void UpdateBackupFolder(){
 }
-public void OODODDQDOQ(){
+public void OOCDQQDODQ(){
 if(!ODODDDOO || objectType == 2){
-if(OQDDCQCCDQ != null){
-for(int i = 0; i < OQDDCQCCDQ.Length; i++){
-OQDDCQCCDQ[i] = false;
-OODQCQCDQO[i] = false;
+if(OOCCDOCCDC != null){
+for(int i = 0; i < OOCCDOCCDC.Length; i++){
+OOCCDOCCDC[i] = false;
+OOCOQDCQQQ[i] = false;
 }
 }
 }
 }
 
-public void OOOCOOQCOD(Vector3 pos){
+public void OQCCDQOOCQ(Vector3 pos){
 
 
 if(!displayRoad){
 displayRoad = true;
-OQCODQCQOC.OQOCOCCQOC(displayRoad, OCCQOQDDDO);
+OODODOQQOD.OQOODQOQCQ(displayRoad, OOODODOQDC);
 }
-pos.y += ODOOCQDQCD.raiseMarkers;
+pos.y += OQQOQOOOOO.raiseMarkers;
 if(forceY && ODOQDQOO != null){
 float dist = Vector3.Distance(pos, ODOQDQOO.transform.position);
 pos.y = ODOQDQOO.transform.position.y + (yChange * (dist / 100f));
@@ -314,7 +320,7 @@ if(ODOQDQOO != null) go = (GameObject)Instantiate(ODOQDQOO);
 else go = (GameObject)Instantiate(Resources.Load("marker", typeof(GameObject)));
 Transform newnode = go.transform;
 newnode.position = pos;
-newnode.parent = OCCQOQDDDO;
+newnode.parent = OOODODOQDC;
 markers++;
 string n;
 if(markers < 10) n = "Marker000" + markers.ToString();
@@ -322,15 +328,15 @@ else if (markers < 100) n = "Marker00" + markers.ToString();
 else n = "Marker0" + markers.ToString();
 newnode.gameObject.name = n;
 MarkerScript scr = newnode.GetComponent<MarkerScript>();
-scr.ODQQCDQDQD = false;
+scr.OQQODCQODC = false;
 scr.objectScript = obj.GetComponent<RoadObjectScript>();
 if(ODOQDQOO == null){
-scr.waterLevel = ODOOCQDQCD.waterLevel;
-scr.floorDepth = ODOOCQDQCD.floorDepth;
-scr.ri = ODOOCQDQCD.indent;
-scr.li = ODOOCQDQCD.indent;
-scr.rs = ODOOCQDQCD.surrounding;
-scr.ls = ODOOCQDQCD.surrounding;
+scr.waterLevel = OQQOQOOOOO.waterLevel;
+scr.floorDepth = OQQOQOOOOO.floorDepth;
+scr.ri = OQQOQOOOOO.indent;
+scr.li = OQQOQOOOOO.indent;
+scr.rs = OQQOQOOOOO.surrounding;
+scr.ls = OQQOQOOOOO.surrounding;
 scr.tension = 0.5f;
 if(objectType == 1){
 
@@ -347,28 +353,28 @@ if(scr.surface != null)scr.surface.gameObject.SetActive(false);
 }
 ODOQDQOO = newnode.gameObject;
 if(markers > 1){
-OQDODQOODQ(ODOOCQDQCD.geoResolution, false, false);
+OCQDOCOQDO(OQQOQOOOOO.geoResolution, false, false);
 if(materialType == 0){
 
-OQCODQCQOC.ODODDDCCOQ(materialType);
+OODODOQQOD.ODOCQCOCDQ(materialType);
 
 }
 }
 }
-public void OQDODQOODQ(float geo, bool renderMode, bool camMode){
-OQCODQCQOC.OQQOODDODO.Clear();
+public void OCQDOCOQDO(float geo, bool renderMode, bool camMode){
+OODODOQQOD.OOQOQQDOOO.Clear();
 int ii = 0;
-ODQDQDQCDQ k;
+OCQQOCQOOC k;
 foreach(Transform child  in obj)
 {
 if(child.name == "Markers"){
 foreach(Transform marker   in child) {
 MarkerScript markerScript = marker.GetComponent<MarkerScript>();
 markerScript.objectScript = obj.GetComponent<RoadObjectScript>();
-if(!markerScript.ODQQCDQDQD) markerScript.ODQQCDQDQD = OQCODQCQOC.OOODQCODOC(marker);
-k  = new ODQDQDQCDQ();
+if(!markerScript.OQQODCQODC) markerScript.OQQODCQODC = OODODOQQOD.OQDQDDOOOQ(marker);
+k  = new OCQQOCQOOC();
 k.position = marker.position;
-k.num = OQCODQCQOC.OQQOODDODO.Count;
+k.num = OODODOQQOD.OOQOQQDOOO.Count;
 k.object1 = marker;
 k.object2 = markerScript.surface;
 k.tension = markerScript.tension;
@@ -380,43 +386,43 @@ k.rt = markerScript.rt;
 k.lt = markerScript.lt;
 k.rs = markerScript.rs;
 if(k.rs < 1)k.rs = 1f;
-k.OQCCOQQQQO = markerScript.rs;
+k.ODDDODDDCO = markerScript.rs;
 k.ls = markerScript.ls;
 if(k.ls < 1)k.ls = 1f;
-k.OQQOOODQCC = markerScript.ls;
+k.OQOQCDDCDD = markerScript.ls;
 k.renderFlag = markerScript.bridgeObject;
-k.OCOCCCCCQQ = markerScript.distHeights;
+k.OCCCQQCCDQ = markerScript.distHeights;
 k.newSegment = markerScript.newSegment;
 k.tunnelFlag = markerScript.tunnelFlag;
 k.floorDepth = markerScript.floorDepth;
 k.waterLevel = waterLevel;
 k.lockWaterLevel = markerScript.lockWaterLevel;
 k.sharpCorner = markerScript.sharpCorner;
-k.OCDQOQOCOC = OQCODQCQOC;
+k.OOCQQQOOOC = OODODOQQOD;
 markerScript.markerNum = ii;
 markerScript.distance = "-1";
-markerScript.OCOCCDDCOD = "-1";
-OQCODQCQOC.OQQOODDODO.Add(k);
+markerScript.OQOOCQQDOO = "-1";
+OODODOQQOD.OOQOQQDOOO.Add(k);
 ii++;
 }
 }
 }
 distance = "-1";
 
-OQCODQCQOC.OOQCQCQOCO = ODOOCQDQCD.roadWidth;
+OODODOQQOD.ODCQDOCCCQ = OQQOQOOOOO.roadWidth;
 
-OQCODQCQOC.OQODCDQQDC(geo, obj, ODOOCQDQCD.OOQDOOQQ, renderMode, camMode, objectType);
-if(OQCODQCQOC.leftVecs.Count > 0){
-leftVecs = OQCODQCQOC.leftVecs.ToArray();
-rightVecs = OQCODQCQOC.rightVecs.ToArray();
+OODODOQQOD.OQCDOODOOQ(geo, obj, OQQOQOOOOO.OOQDOOQQ, renderMode, camMode, objectType);
+if(OODODOQQOD.leftVecs.Count > 0){
+leftVecs = OODODOQQOD.leftVecs.ToArray();
+rightVecs = OODODOQQOD.rightVecs.ToArray();
 }
 }
 public void StartCam(){
 
-OQDODQOODQ(0.5f, false, true);
+OCQDOCOQDO(0.5f, false, true);
 
 }
-public void ODDCCCQCOC(){
+public void ODDOOCQODD(){
 int i = 0;
 foreach(Transform child  in obj)
 {
@@ -435,7 +441,7 @@ i++;
 }
 markers = i - 1;
 
-OQDODQOODQ(ODOOCQDQCD.geoResolution, false, false);
+OCQDOCOQDO(OQQOQOOOOO.geoResolution, false, false);
 }
 public List<Transform> RebuildObjs(){
 RoadObjectScript[] scripts = (RoadObjectScript[])FindObjectsOfType(typeof(RoadObjectScript));
@@ -447,22 +453,22 @@ return rObj;
 }
 public void RestoreTerrain1(){
 
-OQDODQOODQ(ODOOCQDQCD.geoResolution, false, false);
-if(OQCODQCQOC != null) OQCODQCQOC.OQCODQODOQ();
+OCQDOCOQDO(OQQOQOOOOO.geoResolution, false, false);
+if(OODODOQQOD != null) OODODOQQOD.OQODQOQOOQ();
 ODODDDOO = false;
 }
-public void OQCCOODCDO(){
-OQCODQCQOC.OQCCOODCDO(ODOOCQDQCD.applySplatmap, ODOOCQDQCD.splatmapSmoothLevel, ODOOCQDQCD.renderRoad, ODOOCQDQCD.tuw, ODOOCQDQCD.roadResolution, ODOOCQDQCD.raise, ODOOCQDQCD.opacity, ODOOCQDQCD.expand, ODOOCQDQCD.offsetX, ODOOCQDQCD.offsetY, ODOOCQDQCD.beveledRoad, ODOOCQDQCD.splatmapLayer, ODOOCQDQCD.OdQODQOD, OOQQQDOD, OOQQQDODOffset, OOQQQDODLength);
+public void OOCQDDOQOC(){
+OODODOQQOD.OOCQDDOQOC(OQQOQOOOOO.applySplatmap, OQQOQOOOOO.splatmapSmoothLevel, OQQOQOOOOO.renderRoad, OQQOQOOOOO.tuw, OQQOQOOOOO.roadResolution, OQQOQOOOOO.raise, OQQOQOOOOO.opacity, OQQOQOOOOO.expand, OQQOQOOOOO.offsetX, OQQOQOOOOO.offsetY, OQQOQOOOOO.beveledRoad, OQQOQOOOOO.splatmapLayer, OQQOQOOOOO.OdQODQOD, OOQQQDOD, OOQQQDODOffset, OOQQQDODLength);
 }
-public void OQQOCOQQOC(){
-OQCODQCQOC.OQQOCOQQOC(ODOOCQDQCD.renderRoad, ODOOCQDQCD.tuw, ODOOCQDQCD.roadResolution, ODOOCQDQCD.raise, ODOOCQDQCD.beveledRoad, ODOOCQDQCD.OdQODQOD, OOQQQDOD, OOQQQDODOffset, OOQQQDODLength);
+public void OQQDOQDOQD(){
+OODODOQQOD.OQQDOQDOQD(OQQOQOOOOO.renderRoad, OQQOQOOOOO.tuw, OQQOQOOOOO.roadResolution, OQQOQOOOOO.raise, OQQOQOOOOO.beveledRoad, OQQOQOOOOO.OdQODQOD, OOQQQDOD, OOQQQDODOffset, OOQQQDODLength);
 }
-public void ODDCCQDCQC(Vector3 pos, bool doInsert){
+public void OCQOOCOCQD(Vector3 pos, bool doInsert){
 
 
 if(!displayRoad){
 displayRoad = true;
-OQCODQCQOC.OQOCOCCQOC(displayRoad, OCCQOQDDDO);
+OODODOQQOD.OQOODQOQCQ(displayRoad, OOODODOQDC);
 }
 
 int first = -1;
@@ -470,41 +476,48 @@ int second = -1;
 float dist1 = 10000;
 float dist2 = 10000;
 Vector3 newpos = pos;
-ODQDQDQCDQ k;
-ODQDQDQCDQ k1 = (ODQDQDQCDQ)OQCODQCQOC.OQQOODDODO[0];
-ODQDQDQCDQ k2 = (ODQDQDQCDQ)OQCODQCQOC.OQQOODDODO[1];
+OCQQOCQOOC k;
+OCQQOCQOOC k1 = (OCQQOCQOOC)OODODOQQOD.OOQOQQDOOO[0];
+OCQQOCQOOC k2 = (OCQQOCQOOC)OODODOQQOD.OOQOQQDOOO[1];
 
-OQCODQCQOC.OOQQDCQQCQ(pos, out first, out second, out dist1, out dist2, out k1, out k2, out newpos);
+if(doInsert){
+Debug.Log("Start Insert" + doInsert);
+}
+OODODOQQOD.OQCOOOQOCQ(pos, out first, out second, out dist1, out dist2, out k1, out k2, out newpos, doInsert);
+if(doInsert){
+Debug.Log("marker 1: " + first);
+Debug.Log("marker 2: " + second);
+}
 pos = newpos;
 if(doInsert && first >= 0 && second >= 0){
-if(ODOOCQDQCD.OOQDOOQQ && second == OQCODQCQOC.OQQOODDODO.Count - 1){
-OOOCOOQCOD(pos);
+if(OQQOQOOOOO.OOQDOOQQ && second == OODODOQQOD.OOQOQQDOOO.Count - 1){
+OQCCDQOOCQ(pos);
 }else{
-k = (ODQDQDQCDQ)OQCODQCQOC.OQQOODDODO[second];
+k = (OCQQOCQOOC)OODODOQQOD.OOQOQQDOOO[second];
 string name = k.object1.name;
 string n;
 int j = second + 2;
-for(int i = second; i < OQCODQCQOC.OQQOODDODO.Count - 1; i++){
-k = (ODQDQDQCDQ)OQCODQCQOC.OQQOODDODO[i];
+for(int i = second; i < OODODOQQOD.OOQOQQDOOO.Count - 1; i++){
+k = (OCQQOCQOOC)OODODOQQOD.OOQOQQDOOO[i];
 if(j < 10) n = "Marker000" + j.ToString();
 else if (j < 100) n = "Marker00" + j.ToString();
 else n = "Marker0" + j.ToString();
 k.object1.name = n;
 j++;
 }
-k = (ODQDQDQCDQ)OQCODQCQOC.OQQOODDODO[first];
+k = (OCQQOCQOOC)OODODOQQOD.OOQOQQDOOO[first];
 Transform newnode = (Transform)Instantiate(k.object1.transform, pos, k.object1.rotation);
 newnode.gameObject.name = name;
-newnode.parent = OCCQOQDDDO;
-
-#if UNITY_4_5     
+newnode.parent = OOODODOQDC;
+#if UNITY_4_5
 newnode.SetSiblingIndex(second);
-#elif UNITY_4_6  
+#elif UNITY_4_6
+newnode.SetSiblingIndex(second);
+#elif UNITY_5_0
 newnode.SetSiblingIndex(second);
 #endif
-
 MarkerScript scr = newnode.GetComponent<MarkerScript>();
-scr.ODQQCDQDQD = false;
+scr.OQQODCQODC = false;
 float	totalDist = dist1 + dist2;
 float perc1 = dist1 / totalDist;
 float paramDif = k1.ri - k2.ri;
@@ -519,8 +532,8 @@ paramDif = k1.rs - k2.rs;
 scr.rs = k1.rs - (paramDif * perc1);
 paramDif = k1.ls - k2.ls;
 scr.ls = k1.ls - (paramDif * perc1);
-OQDODQOODQ(ODOOCQDQCD.geoResolution, false, false);
-if(materialType == 0)OQCODQCQOC.ODODDDCCOQ(materialType);
+OCQDOCOQDO(OQQOQOOOOO.geoResolution, false, false);
+if(materialType == 0)OODODOQQOD.ODOCQCOCDQ(materialType);
 #if UNITY_3_5
 if(objectType == 2) scr.surface.gameObject.active = false;
 #else
@@ -528,33 +541,40 @@ if(objectType == 2) scr.surface.gameObject.SetActive(false);
 #endif
 }
 }
-ODDCCCQCOC();
+ODDOOCQODD();
 }
-public void OQQDCOQODO(){
+public void OOCOOODQCQ(){
 
-DestroyImmediate(ODOOCQDQCD.ODQDODOODQ.gameObject);
-ODQDODOODQ = null;
-ODDCCCQCOC();
+DestroyImmediate(OQQOQOOOOO.OCCQQCQQOQ.gameObject);
+OCCQQCQQOQ = null;
+ODDOOCQODD();
 }
-public void ODCDDDOCDO(){
+public void ODQCDOCCDO(){
 }
 
-public List<SideObjectParams> ODDDDCDDOC(){
-		return null;
+public List<SideObjectParams> OCQDODOCOC(){
+		return  null;
 }
-public void OQDCCDDCDQ(){
+public void OQQQQDDCOO(){
 }
-public void OOCQQQQQQQ(List<ODODDQQO> arr, String[] DOODQOQO, String[] OODDQOQO){
+public void OQQCOCCCQO(List<ODODDQQO> arr, String[] DOODQOQO, String[] OODDQOQO){
+}
+public void SetMultipleTerrains(bool flag){
+RoadObjectScript[] scrpts = (RoadObjectScript[])FindObjectsOfType(typeof(RoadObjectScript));
+foreach(RoadObjectScript scr in scrpts){
+scr.multipleTerrains = flag;
+if(scr.OODODOQQOD != null)scr.OODODOQQOD.multipleTerrains = flag;
+}
 }
 public bool CheckWaterHeights(){
-if(OQCDOODQQQ.terrain == null) return false;
+if(OQOCOOCCQO.terrain == null) return false;
 bool flag = true;
 
-float y = OQCDOODQQQ.terrain.transform.position.y;
+float y = OQOCOOCCQO.terrain.transform.position.y;
 foreach(Transform child  in obj) {
 if(child.name == "Markers"){
 foreach(Transform marker  in child) {
-//MarkerScript markerScript = marker.GetComponent<MarkerScript>();
+
 if(marker.position.y - y <= 0.1f) flag = false;
 }
 }

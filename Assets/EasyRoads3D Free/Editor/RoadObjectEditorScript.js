@@ -17,28 +17,33 @@ function OnEnable(){
 
 target.backupLocation = EditorPrefs.GetInt("ER3DbckLocation", 0);
 
-if(target.OQCODQCQOC == null){
-ODCDDDDDDQ();
-target.OCOOCQODQD(null, null, null);
+if(target.extensionPath == ""){
+OOCCCOCCCC.extensionPath = GetExtensionPath();
+}
+if(target.OODODOQQOD == null){
+OQQCDOOQOQ();
+
+OQQDODDCQC.CheckTerrainData(target.OODODOQQOD);
+target.OOCCOODQQD(null, null, null);
 }
 
-target.ODODQOQO = target.OQCODQCQOC.ODDDCOQDCC();
-target.ODODQOQOInt = target.OQCODQCQOC.OCDDCDCCQD();
+target.ODODQOQO = target.OODODOQQOD.OOCCQODDOD();
+target.ODODQOQOInt = target.OODODOQQOD.OCOCDOODOC();
 if(target.splatmapLayer >= target.ODODQOQO.Length)target.splatmapLayer = 4;
 if(target.customMesh != null){
 if(target.customMesh.GetComponent(typeof(Collider))){
 col = target.customMesh.GetComponent(typeof(Collider));
-}else if(OQCDOODQQQ.terrain != null){
-col = OQCDOODQQQ.terrain.GetComponent(typeof(TerrainCollider));
+}else if(OQOCOOCCQO.terrain != null){
+col = OQOCOOCCQO.terrain.GetComponent(typeof(TerrainCollider));
 }
-}else if(OQCDOODQQQ.terrain != null){
-col = OQCDOODQQQ.terrain.GetComponent(typeof(TerrainCollider));
+}else if(OQOCOOCCQO.terrain != null){
+col = OQOCOOCCQO.terrain.GetComponent(typeof(TerrainCollider));
 }
 
-if(ODCDDDDDDQ()){
-OQCDOODQQQ.OQOOCOCDDQ();
+if(OQQCDOOQOQ()){
+OQOCOOCCQO.OOCDCOQQCD();
 }
-target.ODQDODOODQs = new GameObject[0];
+target.OCCQQCQQOQs = new GameObject[0];
 
 
 
@@ -49,12 +54,12 @@ function OnInspectorGUI(){
 EasyRoadsGUIMenu(true, true, target);
 }
 function OnSceneGUI() {
-if(target.OQCODQCQOC == null){
-ODCDDDDDDQ();
-target.OCOOCQODQD(null, null, null);
-if(target.OCDQCCOCOC != EditorApplication.currentScene && target.OQCODQCQOC == null){
-OCQCDCCDOC.terrainList.Clear();
-target.OCDQCCOCOC = EditorApplication.currentScene;
+if(target.OODODOQQOD == null){
+OQQCDOOQOQ();
+target.OOCCOODQQD(null, null, null);
+if(target.OCOCCQOCDD != EditorApplication.currentScene && target.OODODOQQOD == null){
+OQQDCCCQDQ.terrainList.Clear();
+target.OCOCCQOCDD = EditorApplication.currentScene;
 }
 
 }
@@ -68,55 +73,55 @@ function EasyRoadsGUIMenu(flag : boolean, senderIsMain : boolean,  nRoadScript :
 
 
 
-if(target.OQDDCQCCDQ == null || target.OODQCQCDQO == null || target.ODOOCQDQCD == null || target.OQDDCQCCDQ.Length == 0 ){
-target.OQDDCQCCDQ = new boolean[5];
-target.OODQCQCDQO = new boolean[5];
-target.ODOOCQDQCD = nRoadScript;
+if(target.OOCCDOCCDC == null || target.OOCOQDCQQQ == null || target.OQQOQOOOOO == null || target.OOCCDOCCDC.Length == 0 ){
+target.OOCCDOCCDC = new boolean[5];
+target.OOCOQDCQQQ = new boolean[5];
+target.OQQOQOOOOO = nRoadScript;
 
-target.ODODQCCDOC = target.OQCODQCQOC.OQQCCOQDQO();
-target.ODODQOQO = target.OQCODQCQOC.ODDDCOQDCC();
-target.ODODQOQOInt = target.OQCODQCQOC.OCDDCDCCQD();
+target.OQDODQDOCO = target.OODODOQQOD.ODQOOCQCQQ();
+target.ODODQOQO = target.OODODOQQOD.OOCCQODDOD();
+target.ODODQOQOInt = target.OODODOQQOD.OCOCDOODOC();
 }
 origAnchor = GUI.skin.box.alignment;
-if(target.OODCOCOOCC == null){
-target.OODCOCOOCC = Resources.Load("ER3DSkin", GUISkin);
-target.OQQOCCQOOC = Resources.Load("ER3DLogo", Texture2D);
+if(target.OOOODDDODC == null){
+target.OOOODDDODC = Resources.Load("ER3DSkin", GUISkin);
+target.OOOCCQQQOC = Resources.Load("ER3DLogo", Texture2D);
 }
-if(!flag) target.OODODDQDOQ();
-if(target.ODDDQCOOQD == -1) target.ODQDODOODQ = null;
+if(!flag) target.OOCDQQDODQ();
+if(target.OQOQOOOQQO == -1) target.OCCQQCQQOQ = null;
 var origSkin : GUISkin = GUI.skin;
-GUI.skin = target.OODCOCOOCC;
+GUI.skin = target.OOOODDDODC;
 EditorGUILayout.Space();
 
 EditorGUILayout.BeginHorizontal ();
 GUILayout.FlexibleSpace();
-target.OQDDCQCCDQ[0] = GUILayout.Toggle(target.OQDDCQCCDQ[0] ,new GUIContent("", " Add road markers. "),"AddMarkers",GUILayout.Width(40), GUILayout.Height(22));
-if(target.OQDDCQCCDQ[0] == true && target.OODQCQCDQO[0] == false) {
-target.OODODDQDOQ();
-target.OQDDCQCCDQ[0] = true;  target.OODQCQCDQO[0] = true;
+target.OOCCDOCCDC[0] = GUILayout.Toggle(target.OOCCDOCCDC[0] ,new GUIContent("", " Add road markers. "),"AddMarkers",GUILayout.Width(40), GUILayout.Height(22));
+if(target.OOCCDOCCDC[0] == true && target.OOCOQDCQQQ[0] == false) {
+target.OOCDQQDODQ();
+target.OOCCDOCCDC[0] = true;  target.OOCOQDCQQQ[0] = true;
 }
-target.OQDDCQCCDQ[1]  = GUILayout.Toggle(target.OQDDCQCCDQ[1] ,new GUIContent("", " Insert road markers. "),"insertMarkers",GUILayout.Width(40),GUILayout.Height(22));
-if(target.OQDDCQCCDQ[1] == true && target.OODQCQCDQO[1] == false) {
-target.OODODDQDOQ();
-target.OQDDCQCCDQ[1] = true;  target.OODQCQCDQO[1] = true;
+target.OOCCDOCCDC[1]  = GUILayout.Toggle(target.OOCCDOCCDC[1] ,new GUIContent("", " Insert road markers. "),"insertMarkers",GUILayout.Width(40),GUILayout.Height(22));
+if(target.OOCCDOCCDC[1] == true && target.OOCOQDCQQQ[1] == false) {
+target.OOCDQQDODQ();
+target.OOCCDOCCDC[1] = true;  target.OOCOQDCQQQ[1] = true;
 }
-target.OQDDCQCCDQ[2]  = GUILayout.Toggle(target.OQDDCQCCDQ[2] ,new GUIContent("", " Process the terrain and create road geometry. "),"terrain",GUILayout.Width(40),GUILayout.Height(22));
+target.OOCCDOCCDC[2]  = GUILayout.Toggle(target.OOCCDOCCDC[2] ,new GUIContent("", " Process the terrain and create road geometry. "),"terrain",GUILayout.Width(40),GUILayout.Height(22));
 
-if(target.OQDDCQCCDQ[2] == true && (target.OODQCQCDQO[2] == false || target.doTerrain)) {
+if(target.OOCCDOCCDC[2] == true && (target.OOCOQDCQQQ[2] == false || target.doTerrain)) {
 
 if(target.markers <= 2){
 EditorUtility.DisplayDialog("Alert", "A minimum of 2 road markers is required before the terrain can be leveled!", "Close");
-target.OQDDCQCCDQ[2] = false;
+target.OOCCDOCCDC[2] = false;
 }else{
 if(target.disableFreeAlerts)EditorUtility.DisplayDialog("Alert", "Switching back to 'Edit Mode' is not supported in the free version.\n\nClick Close to generate the road mesh and deform the terrain. This process can take some time depending on the terrains heightmap resolution and the optional vegetation removal, please be patient!\n\nYou can always restore the terrain using the EasyRoads3D terrain restore option in the main menu.\n\nNote: you can disable displaying this message in General Settings.", "Close");
 if(!flag){
 EditorUtility.DisplayDialog("Alert", "The Unity Terrain Object does not accept height values < 0. The river floor will be equal or higher then the water level. Position all markers higher above the terrain!", "Close");
-target.OQDDCQCCDQ[2] = false;
+target.OOCCDOCCDC[2] = false;
 }else{
 tvDone = false;
-target.OODODDQDOQ();
-target.OQDDCQCCDQ[2] = true;  target.OODQCQCDQO[2] = true;
-target.OOCQCCQOQQ = true;
+target.OOCDQQDODQ();
+target.OOCCDOCCDC[2] = true;  target.OOCOQDCQQQ[2] = true;
+target.OCCDOQDQQD = true;
 target.doTerrain = false;
 target.markerDisplayStr = "Show Markers";
 if(target.objectType < 2){
@@ -124,11 +129,10 @@ if(target.objectType < 2){
 
 
 
-#if UNITY_4_6
-#elif UNITY_4_5
-#elif UNITY_4_3
+#if UNITY_4_3
+
 #else
-Undo.RegisterUndo(OQCDOODQQQ.terrain.terrainData, "EasyRoads3D Terrain leveling");
+
 #endif
 
 
@@ -136,51 +140,56 @@ Undo.RegisterUndo(OQCDOODQQQ.terrain.terrainData, "EasyRoads3D Terrain leveling"
 
 if(!target.displayRoad){
 target.displayRoad = true;
-target.OQCODQCQOC.OQOCOCCQOC(true, target.OCCQOQDDDO);
+target.OODODOQQOD.OQOODQOQCQ(true, target.OOODODOQDC);
 }
-OCQCDCCDOC.ODQODCODOD = false;
+OQQDCCCQDQ.OOCOCQQOOC = false;
 
-OOQCOOQQDO(target);
-if(target.OOQDOOQQ)target.OQCCOODCDO();
+OCDCQCQODD(target);
+if(target.OOQDOOQQ)target.OOCQDDOQOC();
 
 
 
 }else{
 
-target.OQCODQCQOC.OCCODDODOO(target.transform, false);
+target.OODODOQQOD.ODCDQOOOOO(target.transform, false);
 }
 } 
 if(target.disableFreeAlerts)EditorUtility.DisplayDialog("Finished!", "The terrain data has been updated.\n\nIf you want to keep these changes and add more road objects it is recommended to update the terrain backup data using the EasyRoads3D terrain backup options in the main menu. By doing this you will not loose the current terrain changes if later in the development process you want to restore the terrain back to the current status.\n\nYou can also duplicate the terrain object in the project panel and keep that as the terrain backup.\n\nNote: you can disable displaying this message in General Settings.", "Close");
+
+
+
+
+
 }
 }
 
-target.OQDDCQCCDQ[3]  = GUILayout.Toggle(target.OQDDCQCCDQ[3] ,new GUIContent("", " General settings. "),"settings",GUILayout.Width(40),GUILayout.Height(22));
-if(target.OQDDCQCCDQ[3] == true && target.OODQCQCDQO[3] == false) {
-target.OODODDQDOQ();
-target.OQDDCQCCDQ[3] = true;  target.OODQCQCDQO[3] = true;
+target.OOCCDOCCDC[3]  = GUILayout.Toggle(target.OOCCDOCCDC[3] ,new GUIContent("", " General settings. "),"settings",GUILayout.Width(40),GUILayout.Height(22));
+if(target.OOCCDOCCDC[3] == true && target.OOCOQDCQQQ[3] == false) {
+target.OOCDQQDODQ();
+target.OOCCDOCCDC[3] = true;  target.OOCOQDCQQQ[3] = true;
 }
-target.OQDDCQCCDQ[4]  = GUILayout.Toggle(target.OQDDCQCCDQ[4] ,new GUIContent("", "Version and Purchase Info"),"info",GUILayout.Width(40),GUILayout.Height(22));
-if(target.OQDDCQCCDQ[4] == true && target.OODQCQCDQO[4] == false) {
-target.OODODDQDOQ();
-target.OQDDCQCCDQ[4] = true;  target.OODQCQCDQO[4] = true;
+target.OOCCDOCCDC[4]  = GUILayout.Toggle(target.OOCCDOCCDC[4] ,new GUIContent("", "Version and Purchase Info"),"info",GUILayout.Width(40),GUILayout.Height(22));
+if(target.OOCCDOCCDC[4] == true && target.OOCOQDCQQQ[4] == false) {
+target.OOCDQQDODQ();
+target.OOCCDOCCDC[4] = true;  target.OOCOQDCQQQ[4] = true;
 }
 GUILayout.FlexibleSpace();
 EditorGUILayout.EndHorizontal();
 GUI.skin = null;
 GUI.skin = origSkin;
-target.ODDDQCOOQD = -1;
+target.OQOQOOOQQO = -1;
 for(var i : int  = 0; i < 5; i++){
-if(target.OQDDCQCCDQ[i]){
-target.ODDDQCOOQD = i;
-target.OODQCOQQQQ = i;
+if(target.OOCCDOCCDC[i]){
+target.OQOQOOOQQO = i;
+target.OCCDDDDDCD = i;
 }
 }
-if(target.ODDDQCOOQD == -1) target.OODODDQDOQ();
+if(target.OQOQOOOQQO == -1) target.OOCDQQDODQ();
 var markerMenuDisplay : int = 1;
-if(target.ODDDQCOOQD == 0 || target.ODDDQCOOQD == 1) markerMenuDisplay = 0;
-else if(target.ODDDQCOOQD == 2 || target.ODDDQCOOQD == 3 || target.ODDDQCOOQD == 4) markerMenuDisplay = 0;
+if(target.OQOQOOOQQO == 0 || target.OQOQOOOQQO == 1) markerMenuDisplay = 0;
+else if(target.OQOQOOOQQO == 2 || target.OQOQOOOQQO == 3 || target.OQOQOOOQQO == 4) markerMenuDisplay = 0;
 
-if(target.OOCQCCQOQQ && !target.OQDDCQCCDQ[2] && Application.isPlaying){
+if(target.OCCDOQDQQD && !target.OOCCDOCCDC[2] && Application.isPlaying){
 EditorPrefs.SetBool("ERv2isPlaying", true);
 
 }
@@ -191,32 +200,31 @@ EditorPrefs.SetBool("ERv2isPlaying", true);
 
 
 
-if(target.OOCQCCQOQQ && !target.OQDDCQCCDQ[2]){ 
-target.OQDDCQCCDQ[2] = true;
-target.OODQCQCDQO[2] = true;
+if(target.OCCDOQDQQD && !target.OOCCDOCCDC[2]){ 
+target.OOCCDOCCDC[2] = true;
+target.OOCOQDCQQQ[2] = true;
 if(target.disableFreeAlerts)EditorUtility.DisplayDialog("Alert", "Switching back to 'Edit Mode' to add markers or change other settings is not supported in the free version.\n\nDrag the road mesh to the root of the hierarchy and delete the EasyRoads3D editor object once the road is ready!\n\nYou can use Undo to restore the terrain.", "Close");
 }
 GUI.skin.box.alignment = TextAnchor.UpperLeft;
-if(target.ODDDQCOOQD >= 0 && target.ODDDQCOOQD != 4){
-if(target.ODODQCCDOC == null || target.ODODQCCDOC.Length == 0){
+if(target.OQOQOOOQQO >= 0 && target.OQOQOOOQQO != 4){
+if(target.OQDODQDOCO == null || target.OQDODQDOCO.Length == 0){
 
-target.ODODQCCDOC = target.OQCODQCQOC.OQQCCOQDQO();
-target.ODODQOQO = target.OQCODQCQOC.ODDDCOQDCC();
-target.ODODQOQOInt = target.OQCODQCQOC.OCDDCDCCQD();
+target.OQDODQDOCO = target.OODODOQQOD.ODQOOCQCQQ();
+target.ODODQOQO = target.OODODOQQOD.OOCCQODDOD();
+target.ODODQOQOInt = target.OODODOQQOD.OCOCDOODOC();
 }
 EditorGUILayout.BeginHorizontal();
-GUILayout.Box(target.ODODQCCDOC[target.ODDDQCOOQD], GUILayout.MinWidth(253), GUILayout.MaxWidth(1500), GUILayout.Height(50));
+GUILayout.Box(target.OQDODQDOCO[target.OQOQOOOQQO], GUILayout.MinWidth(253), GUILayout.MaxWidth(1500), GUILayout.Height(50));
 EditorGUILayout.EndHorizontal();
 EditorGUILayout.Space();
 }
-if(target.ODDDQCOOQD == -1 && target.ODQDODOODQ != null) Selection.activeGameObject =  target.ODQDODOODQ.gameObject;
+if(target.OQOQOOOQQO == -1 && target.OCCQQCQQOQ != null) Selection.activeGameObject =  target.OCCQQCQQOQ.gameObject;
 GUI.skin.box.alignment = origAnchor;
 
-if(target.erInit == "" || (OCQCDCCDOC.debugFlag && !debugDone)){
+if(target.erInit == "" || (OQQDCCCQDQ.debugFlag && !debugDone)){
 debugDone = true;
-
-target.erInit = OCDQQCOQOD.OQOCQOQCOO(target.version); 
-target.OQCODQCQOC.erInit = target.erInit;
+target.erInit = "done";
+target.OODODOQQOD.erInit = target.erInit;
 
 
 
@@ -225,22 +233,24 @@ this.Repaint();
 }
 if(target.erInit != "" && res){
 
-target.OQDODQOODQ(target.geoResolution, false, false);
+target.OCQDOCOQDO(target.geoResolution, false, false);
 res = false;
 }
 if(target.erInit.Length == 0){
-}else if(target.ODDDQCOOQD == 0 || target.ODDDQCOOQD == 1){
+}else if(target.OQOQOOOQQO == 0 || target.OQOQOOOQQO == 1){
 EditorGUILayout.BeginHorizontal();
 GUILayout.FlexibleSpace();
 if(GUILayout.Button ("Refresh Surfaces", GUILayout.Width(200))){
-target.ODDCCCQCOC();
+target.ODDOOCQODD();
 }
 GUILayout.FlexibleSpace();
 EditorGUILayout.EndHorizontal();
-}else if(target.ODDDQCOOQD == 3){
+}else if(target.OQOQOOOQQO == 3){
 
 GUI.skin.box.alignment = TextAnchor.MiddleLeft;
-GUILayout.Box(" General Settings", GUILayout.MinWidth(253), GUILayout.MaxWidth(1500), GUILayout.Height(20));
+EditorGUILayout.BeginVertical("Box");
+EditorGUILayout.LabelField("General Settings", EditorStyles.boldLabel);
+EditorGUILayout.EndVertical();
 if(target.objectType != 2){
 GUILayout.Space(10);
 var oldDisplay : boolean = target.displayRoad;
@@ -249,7 +259,7 @@ GUILayout.Label(new GUIContent("    Display object", "This will activate/deactiv
 target.displayRoad = EditorGUILayout.Toggle (target.displayRoad);
 EditorGUILayout.EndHorizontal();
 if(oldDisplay != target.displayRoad){
-target.OQCODQCQOC.OQOCOCCQOC(target.displayRoad, target.OCCQOQDDDO);
+target.OODODOQQOD.OQOODQOQCQ(target.displayRoad, target.OOODODOQDC);
 }
 }
 if(target.materialStrings == null){target.materialStrings = new String[2]; target.materialStrings[0] = "Diffuse Shader"; target.materialStrings[1] = "Transparent Shader"; }
@@ -259,14 +269,14 @@ EditorGUILayout.BeginHorizontal();
 GUILayout.Label(new GUIContent("    Surface Material", "The material type used for the road surfaces."), GUILayout.Width(125) );
 target.materialType = EditorGUILayout.Popup (target.materialType, target.materialStrings,   GUILayout.Width(115));
 EditorGUILayout.EndHorizontal();
-if(cm != target.materialType) target.OQCODQCQOC.ODODDDCCOQ(target.materialType);
+if(cm != target.materialType) target.OODODOQQOD.ODOCQCOCDQ(target.materialType);
 if(target.materialType == 1){
 EditorGUILayout.BeginHorizontal();
 GUILayout.Label(new GUIContent("        Surface Opacity", "This controls the transparacy level of the surface objects."), GUILayout.Width(125) );
 var so : float = target.surfaceOpacity;
 target.surfaceOpacity = EditorGUILayout.Slider(target.surfaceOpacity, 0, 1,  GUILayout.Width(150));
 EditorGUILayout.EndHorizontal();
-if(so != target.surfaceOpacity) target.OQCODQCQOC.OOCQQCCCDO(target.surfaceOpacity);
+if(so != target.surfaceOpacity) target.OODODOQQOD.ODQQODCDDD(target.surfaceOpacity);
 }
 EditorGUILayout.Space();
 if(target.objectType < 2){
@@ -283,37 +293,39 @@ if(target.backupLocation != cl){
 if(target.backupLocation == 1){
 if(EditorUtility.DisplayDialog("Backup Location", "Changing the backup location to inside the assets folder is only recommended when you want to synchronize EasyRoads3D backup files with the assetserver.\n\nWould you like to continue?", "Yes", "No")){
 EditorPrefs.SetInt("ER3DbckLocation", target.backupLocation);
-OOQDDDCQDD.SwapFiles(target.backupLocation);
+OQQDODDCQC.SwapFiles(target.backupLocation);
 EditorUtility.DisplayDialog("Confirmation", "The backup location has been updated, all backup folders and files have been copied to the new location.\n\nUse CTRL+R to update the assets folder!", "Close");
 }else target.backupLocation = 0;
 }else{
 if(EditorUtility.DisplayDialog("Backup Location", "The backup location will be changed to outside the assets folder.\n\nWould you like to continue?", "Yes", "No")){
 EditorPrefs.SetInt("ER3DbckLocation", target.backupLocation);
-OOQDDDCQDD.SwapFiles(target.backupLocation);
+OQQDODDCQC.SwapFiles(target.backupLocation);
 EditorUtility.DisplayDialog("Confirmation", "The backup location has been updated, all backup folders and files have been copied to the new location.\n\nUse CTRL+R to update the assets folder!", "Close");
 }else target.backupLocation = 1;
 }
 }
 GUI.enabled = true;
-od = OCQCDCCDOC.debugFlag;
+od = OQQDCCCQDQ.debugFlag;
 EditorGUILayout.BeginHorizontal();
 GUILayout.Label(new GUIContent("    Enable Debugging", "This will enable debugging."), GUILayout.Width(125) );;
-OCQCDCCDOC.debugFlag = EditorGUILayout.Toggle (OCQCDCCDOC.debugFlag);
+OQQDCCCQDQ.debugFlag = EditorGUILayout.Toggle (OQQDCCCQDQ.debugFlag);
 EditorGUILayout.EndHorizontal();
-if(od != OCQCDCCDOC.debugFlag && OCQCDCCDOC.debugFlag) debugDone = false;
+if(od != OQQDCCCQDQ.debugFlag && OQQDCCCQDQ.debugFlag) debugDone = false;
 EditorGUILayout.BeginHorizontal();
 GUILayout.Label(new GUIContent("    Free version alerts", "Uncheck to disable free version alerts."), GUILayout.Width(125) );;
 target.disableFreeAlerts = EditorGUILayout.Toggle (target.disableFreeAlerts);
 EditorGUILayout.EndHorizontal();
 EditorGUILayout.Space();
-GUILayout.Box(" Object Settings", GUILayout.MinWidth(253), GUILayout.MaxWidth(1500), GUILayout.Height(20));
+EditorGUILayout.BeginVertical("Box");
+EditorGUILayout.LabelField("Object Settings", EditorStyles.boldLabel);
+EditorGUILayout.EndVertical();
 EditorGUILayout.BeginHorizontal();
 var wd : float = target.roadWidth;
 if(target.objectType == 0)GUILayout.Label(new GUIContent("    Road width", "The width of the road") ,  GUILayout.Width(125));
 else GUILayout.Label(new GUIContent("    River Width", "The width of the river") ,  GUILayout.Width(125));
 target.roadWidth = EditorGUILayout.FloatField(target.roadWidth, GUILayout.Width(40) );
 EditorGUILayout.EndHorizontal();
-if(wd != target.roadWidth) target.OQDODQOODQ(target.geoResolution, false, false);
+if(wd != target.roadWidth) target.OCQDOCOQDO(target.geoResolution, false, false);
 EditorGUILayout.BeginHorizontal();
 GUILayout.Label(new GUIContent("    Default Indent", "The distance from the left and right side of the road to the part of the terrain levelled at the same height as the road"),  GUILayout.Width(125));
 target.indent = EditorGUILayout.FloatField(target.indent, GUILayout.Width(40));
@@ -344,41 +356,45 @@ else GUILayout.Label(new GUIContent("    Closed Object", "This will connect the 
 target.OOQDOOQQ = EditorGUILayout.Toggle (target.OOQDOOQQ);
 EditorGUILayout.EndHorizontal();
 if(OldClosedTrack != target.OOQDOOQQ){
-target.ODDCCCQCOC();
+target.ODDOOCQODD();
 }
-EditorGUILayout.BeginHorizontal();
 GUI.enabled = false;
+EditorGUILayout.BeginHorizontal();
+OldClosedTrack = target.iOS;
 GUILayout.Label(new GUIContent("    iOS Platform", "This will prepare the road mesh for the iOS Platform"), GUILayout.Width(125) );
 target.iOS = EditorGUILayout.Toggle (target.iOS);
 EditorGUILayout.EndHorizontal();
 if(OldClosedTrack != target.iOS){
+target.OODODOQQOD.iOS = target.iOS;
+target.ODDOOCQODD();
 }
 GUI.enabled = true;
-
 EditorGUILayout.Space();
 EditorGUILayout.BeginHorizontal();
 GUILayout.Label(new GUIContent("    Geometry Resolution", "The polycount of the generated surfaces. It is recommended to use a low resolution while creating the road. Use the maximum resolution when processing the final terrain."), GUILayout.Width(125) );
 var gr : float = target.geoResolution;
 target.geoResolution = EditorGUILayout.Slider(target.geoResolution, 0.5, 5,  GUILayout.Width(150));
 EditorGUILayout.EndHorizontal();
-if(gr != target.geoResolution) target.OQDODQOODQ(target.geoResolution, false, false);
+if(gr != target.geoResolution) target.OCQDOCOQDO(target.geoResolution, false, false);
 EditorGUILayout.BeginHorizontal();
 OldClosedTrack = target.iOS;
 GUI.enabled = false;
-GUILayout.Label(new GUIContent("    Tangents", "This will automatically calculate mesh tangents data required for bump mapping. Note that this will take a little bit more preocessing time."), GUILayout.Width(125) );
+GUILayout.Label(new GUIContent("    Tangents", "This will automatically calculate mesh tangents data required for bump mapping. Note that this will take a little bit more processing time."), GUILayout.Width(125) );
 target.applyTangents = EditorGUILayout.Toggle (target.applyTangents);
 EditorGUILayout.EndHorizontal();
 GUI.enabled = true;
 EditorGUILayout.Space();
-GUILayout.Box(" Render Settings", GUILayout.MinWidth(253), GUILayout.MaxWidth(1500), GUILayout.Height(20));
+EditorGUILayout.BeginVertical("Box");
+EditorGUILayout.LabelField("Render Settings", EditorStyles.boldLabel);
+EditorGUILayout.EndVertical();
 GUI.enabled = false;
-if(OQCDOODQQQ.selectedTerrain == null)OQCDOODQQQ.OQOOCOCDDQ();
-var st : int = OQCDOODQQQ.selectedTerrain;
+if(OQOCOOCCQO.selectedTerrain == null)OQOCOOCCQO.OOCDCOQQCD();
+var st : int = OQOCOOCCQO.selectedTerrain;
 EditorGUILayout.BeginHorizontal();
 GUILayout.Label(new GUIContent("    Active Terrain", "The terrain that will be updated"), GUILayout.Width(125) );
-OQCDOODQQQ.selectedTerrain = EditorGUILayout.Popup (OQCDOODQQQ.selectedTerrain, OQCDOODQQQ.terrainStrings,   GUILayout.Width(115));
+OQOCOOCCQO.selectedTerrain = EditorGUILayout.Popup (OQOCOOCCQO.selectedTerrain, OQOCOOCCQO.terrainStrings,   GUILayout.Width(115));
 EditorGUILayout.EndHorizontal();
-if(st != OQCDOODQQQ.selectedTerrain)OQCDOODQQQ.OOODOQCOOQ();
+if(st != OQOCOOCCQO.selectedTerrain)OQOCOOCCQO.ODQQQCQQCC();
 GUI.enabled = true;
 EditorGUILayout.BeginHorizontal();
 GUILayout.Label(new GUIContent("    Update Vegetation", "When toggled on tree and detail objects near the road will be removed when rendering the terrain."), GUILayout.Width(125) );;
@@ -388,26 +404,28 @@ if(target.handleVegetation){
 GUI.enabled = false;
 EditorGUILayout.BeginHorizontal();
 GUILayout.Label(new GUIContent("      Tree Distance (m)", "The distance from the left and the right of the road up to which terrain trees should be removed."), GUILayout.Width(125) );
-var tr : float = target.OCOCODCCDD;
-target.OCOCODCCDD = EditorGUILayout.Slider(target.OCOCODCCDD, 0, 25,  GUILayout.Width(150));
+var tr : float = target.OCQCQQOCCQ;
+target.OCQCQQOCCQ = EditorGUILayout.Slider(target.OCQCQQOCCQ, 0, 25,  GUILayout.Width(150));
 EditorGUILayout.EndHorizontal();
-if(tr != target.OCOCODCCDD) target.OQCODQCQOC.OCOCODCCDD = target.OCOCODCCDD;
+if(tr != target.OCQCQQOCCQ) target.OODODOQQOD.OCQCQQOCCQ = target.OCQCQQOCCQ;
 EditorGUILayout.BeginHorizontal();
 GUILayout.Label(new GUIContent("      Detail Distance (m)", "The distance from the left and the right of the road up to which terrain detail opbjects should be removed."), GUILayout.Width(125) );
-tr = target.ODDQODQCOO;
-target.ODDQODQCOO = EditorGUILayout.Slider(target.ODDQODQCOO, 0, 25,  GUILayout.Width(150));
+tr = target.ODCOOQCCCQ;
+target.ODCOOQCCCQ = EditorGUILayout.Slider(target.ODCOOQCCCQ, 0, 25,  GUILayout.Width(150));
 EditorGUILayout.EndHorizontal();
-if(tr != target.ODDQODQCOO) target.OQCODQCQOC.ODDQODQCOO = target.ODDQODQCOO;
+if(tr != target.ODCOOQCCCQ) target.OODODOQQOD.ODCOOQCCCQ = target.ODCOOQCCCQ;
 GUI.enabled = true;
 }
 EditorGUILayout.Space();
 
 
-}else if(target.ODDDQCOOQD == 2){
+}else if(target.OQOQOOOQQO == 2){
 
 EditorGUILayout.Space();
-if(target.objectType == 0)GUILayout.Box(" Road Settings:", GUILayout.MinWidth(253), GUILayout.MaxWidth(1500), GUILayout.Height(20));
-else GUILayout.Box(" River Settings:", GUILayout.MinWidth(253), GUILayout.MaxWidth(1500), GUILayout.Height(20));
+EditorGUILayout.BeginVertical("Box");
+if(target.objectType == 0)EditorGUILayout.LabelField("Road Settings", EditorStyles.boldLabel);
+else EditorGUILayout.LabelField("River Settings", EditorStyles.boldLabel);
+EditorGUILayout.EndVertical();
 GUILayout.Space(10);
 var oldRoad : boolean = target.renderRoad;
 var oldRoadResolution : float = target.roadResolution;
@@ -434,6 +452,50 @@ if(GUILayout.Button (target.roadTexture, GUILayout.Width(75), GUILayout.Height(7
 }
 EditorGUILayout.EndHorizontal();
 GUI.enabled = true;
+}
+if(target.objectType == 0){
+GUILayout.Space(10);
+if(target.OOQDOOQQ){
+GUI.enabled = false;
+if(target.blendFlag){
+target.blendFlag = false;
+}
+}
+var bf = target.blendFlag;
+EditorGUILayout.BeginHorizontal();
+GUILayout.Label(new GUIContent(" Blend the start and / or end"," When active, the start and / or end of the road will blend with the terrain according the below settings."), GUILayout.Width(175) );
+target.blendFlag = EditorGUILayout.Toggle (target.blendFlag);
+EditorGUILayout.EndHorizontal();
+if(target.blendFlag != bf)target.OODODOQQOD.blendFlag = target.blendFlag; 
+if(target.blendFlag && !bf){
+if(target.startBlendDistance > 0)OQQDCCCQDQ.FadeBlend(0, target.startBlendDistance, target.OODODOQQOD.road.GetComponent(typeof(MeshFilter)).sharedMesh, target.OODODOQQOD.OdQODQOD);
+if(target.endBlendDistance > 0)OQQDCCCQDQ.FadeBlend(1, target.endBlendDistance, target.OODODOQQOD.road.GetComponent(typeof(MeshFilter)).sharedMesh, target.OODODOQQOD.OdQODQOD);
+}else if(!target.blendFlag && bf){
+OQQDCCCQDQ.ResetBlend(target.OODODOQQOD.road.GetComponent(typeof(MeshFilter)).sharedMesh);
+}
+if(!target.blendFlag)GUI.enabled = false;
+var bd = target.startBlendDistance;
+EditorGUILayout.BeginHorizontal();
+GUILayout.Label(new GUIContent("   Start Distance"," The distance over which the road will be blended with terrain at the start."), GUILayout.Width(100) );
+target.startBlendDistance = EditorGUILayout.Slider(target.startBlendDistance, 0, 20,  GUILayout.Width(175));
+EditorGUILayout.EndHorizontal();
+if(bd != target.startBlendDistance){
+target.OODODOQQOD.startBlendDistance = target.startBlendDistance;
+if(target.startBlendDistance > 0)OQQDCCCQDQ.FadeBlend(0, target.startBlendDistance, target.OODODOQQOD.road.GetComponent(typeof(MeshFilter)).sharedMesh, target.OODODOQQOD.OdQODQOD);
+if(target.endBlendDistance > 0)OQQDCCCQDQ.FadeBlend(1, target.endBlendDistance, target.OODODOQQOD.road.GetComponent(typeof(MeshFilter)).sharedMesh, target.OODODOQQOD.OdQODQOD);
+}
+bd = target.endBlendDistance;
+EditorGUILayout.BeginHorizontal();
+GUILayout.Label(new GUIContent("   End Distance"," The distance over which the road will be blended with terrain at the end."), GUILayout.Width(100) );
+target.endBlendDistance = EditorGUILayout.Slider(target.endBlendDistance, 0, 20,  GUILayout.Width(175));
+EditorGUILayout.EndHorizontal();
+if(bd != target.endBlendDistance){
+target.OODODOQQOD.endBlendDistance = target.endBlendDistance;
+if(target.startBlendDistance > 0)OQQDCCCQDQ.FadeBlend(0, target.startBlendDistance, target.OODODOQQOD.road.GetComponent(typeof(MeshFilter)).sharedMesh, target.OODODOQQOD.OdQODQOD);
+if(target.endBlendDistance > 0)OQQDCCCQDQ.FadeBlend(1, target.endBlendDistance, target.OODODOQQOD.road.GetComponent(typeof(MeshFilter)).sharedMesh, target.OODODOQQOD.OdQODQOD);
+}
+GUI.enabled = true;
+GUILayout.Space(10);
 }
 EditorGUILayout.BeginHorizontal();
 GUI.enabled = false;
@@ -470,6 +532,7 @@ EditorGUILayout.BeginHorizontal();
 GUILayout.Label(new GUIContent(" Raise (cm)","Optionally increase this setting when parts of the terrain stick through the road geometry. It is recommended to adjust these areas using the terrain tools!"), GUILayout.Width(95) );
 target.raise = EditorGUILayout.Slider(target.raise, 0, 100, GUILayout.Width(175));
 EditorGUILayout.EndHorizontal();
+GUILayout.Space(10);
 }else{
 }
 GUILayout.Space(5);
@@ -486,7 +549,7 @@ GUI.enabled = true;
 EditorGUILayout.BeginHorizontal();
 GUILayout.FlexibleSpace();
 if(GUILayout.Button ("Save Geometry", GUILayout.Width(175))){
-target.ODCDDDOCDO();
+target.ODQCDOCCDO();
 Debug.Log("Road object geometry saved");
 }
 GUILayout.FlexibleSpace();
@@ -510,7 +573,7 @@ bflag = false;
 }
 }
 if(!bflag){
-target.OQCODQCQOC.FinalizeObject(target.gameObject);
+target.OODODOQQOD.FinalizeObject(target.gameObject);
 DestroyImmediate(target.gameObject);
 }
 }
@@ -522,10 +585,12 @@ GUI.enabled = true;
 EditorGUILayout.Space();
 if(oldRoad != target.renderRoad || oldRoadResolution != target.roadResolution || oldRoadUV != target.tuw || oldRaise != target.raise || oldSegments != target.OdQODQOD || target.OOQQQDOD != oldOOQQQDOD || target.OOQQQDODOffset != oldOOQQQDODOffset || target.OOQQQDODLength != oldOOQQQDODLength){
 
-target.OQQOCOQQOC();
+target.OQQDOQDOQD();
 
 }
-GUILayout.Box(" Terrain Settings:", GUILayout.MinWidth(253), GUILayout.MaxWidth(1500), GUILayout.Height(20));
+EditorGUILayout.BeginVertical("Box");
+EditorGUILayout.LabelField("Terrain Settings", EditorStyles.boldLabel);
+EditorGUILayout.EndVertical();
 GUILayout.Space(5);
 var oldApplySplatmap : boolean = target.applySplatmap;
 EditorGUILayout.BeginHorizontal();
@@ -558,23 +623,23 @@ GUILayout.Label(new GUIContent(" Opacity","Use this setting to blend the road sp
 target.opacity = EditorGUILayout.Slider (target.opacity, 0, 1,  GUILayout.Width(175));
 EditorGUILayout.EndHorizontal();
 GUILayout.Space(5);
-GUI.enabled = target.OCDCOQDCDQ;
+GUI.enabled = target.OQOQOOOCQO;
 EditorGUILayout.BeginHorizontal();
 GUILayout.FlexibleSpace();
 if(GUILayout.Button ("Apply Changes", GUILayout.Width(175))){
-target.OQCCOODCDO();
+target.OOCQDDOQOC();
 
-if(target.OOQDOOQQ)target.OQCCOODCDO();
-target.OCDCOQDCDQ = false;
+if(target.OOQDOOQQ)target.OOCQDDOQOC();
+target.OQOQOOOCQO = false;
 }
 GUILayout.FlexibleSpace();
 EditorGUILayout.EndHorizontal();
 }
 GUILayout.Space(5);
 if(oldApplySplatmap != target.applySplatmap){
-target.OQCCOODCDO();
+target.OOCQDDOQOC();
 
-if(target.OOQDOOQQ)target.OQCCOODCDO();
+if(target.OOQDOOQQ)target.OOCQDDOQOC();
 }
 GUI.enabled = true;
 EditorGUILayout.BeginHorizontal();
@@ -589,13 +654,12 @@ EditorGUILayout.BeginHorizontal();
 GUILayout.FlexibleSpace();
 if(GUILayout.Button ("Update Edges", GUILayout.Width(175))){
 
-#if UNITY_4_6
-#elif UNITY_4_5
-#elif UNITY_4_3
+#if UNITY_4_3
+
 #else
-Undo.RegisterUndo(OQCDOODQQQ.terrain.terrainData, "EasyRoads3D Terrain smooth");
+
 #endif
-target.OQCODQCQOC.OQQDCDQQDC(target.smoothDistance, 0);
+target.OODODOQQOD.OODDQCOQCQ(target.smoothDistance, 0);
 }
 GUILayout.FlexibleSpace();
 EditorGUILayout.EndHorizontal();
@@ -608,19 +672,20 @@ EditorGUILayout.BeginHorizontal();
 GUILayout.FlexibleSpace();
 if(GUILayout.Button ("Update Surrounding", GUILayout.Width(175))){
 
-#if UNITY_4_6
-#elif UNITY_4_5
-#elif UNITY_4_3
+#if UNITY_4_3
+
 #else
-Undo.RegisterUndo(OQCDOODQQQ.terrain.terrainData, "EasyRoads3D Terrain smooth");
+
 #endif
-target.OQCODQCQOC.OQQDCDQQDC(target.smoothSurDistance, 1);
+target.OODODOQQOD.OODDQCOQCQ(target.smoothSurDistance, 1);
 }
 GUILayout.FlexibleSpace();
 EditorGUILayout.EndHorizontal();
 EditorGUILayout.Space();
 
-GUILayout.Box(" Cam Fly Over", GUILayout.MinWidth(253), GUILayout.MaxWidth(1500), GUILayout.Height(20));
+EditorGUILayout.BeginVertical("Box");
+EditorGUILayout.LabelField("Cam Fly Over", EditorStyles.boldLabel);
+EditorGUILayout.EndVertical();
 GUI.enabled = false;
 EditorGUILayout.BeginHorizontal();
 GUILayout.Label(new GUIContent("  Position", ""), GUILayout.Width(75) );
@@ -638,11 +703,11 @@ if(sp != target.camHeight){
 }
 GUI.enabled = true;
 EditorGUILayout.Space();
-}else if(target.ODDDQCOOQD == 4){
+}else if(target.OQOQOOOQQO == 4){
 EditorGUILayout.BeginHorizontal();
 GUILayout.FlexibleSpace();
 
-GUILayout.Label(target.OQQOCCQOOC);
+GUILayout.Label(target.OOOCCQQQOC);
 GUILayout.FlexibleSpace();
 EditorGUILayout.EndHorizontal();
 EditorGUILayout.Space();
@@ -672,13 +737,22 @@ GUI.skin = origSkin;
 EditorGUILayout.Space();
 EditorGUILayout.BeginHorizontal();
 GUILayout.FlexibleSpace();
-GUILayout.Box("Check out the full version if you had like to take advantage of all the features including the built-in paramatric modeling tool", GUILayout.Width(250));
+//EditorGUILayout.BeginVertical("Box");
+EditorGUILayout.HelpBox("\nCheck out the full version if you had like to take advantage of all the features including the built-in paramatric modeling tool\n", MessageType.None, true);
+//EditorGUILayout.EndVertical();
 GUILayout.FlexibleSpace();
 EditorGUILayout.EndHorizontal();
 EditorGUILayout.Space();
 EditorGUILayout.BeginHorizontal();
 GUILayout.FlexibleSpace();
-if(GUILayout.Button ("Get the Full Version", GUILayout.Width(225))){
+if(GUILayout.Button ("Purchase Full Version from website", GUILayout.Width(225))){
+Application.OpenURL ("http://www.unityterraintools.com/store.php");
+}
+GUILayout.FlexibleSpace();
+EditorGUILayout.EndHorizontal();
+EditorGUILayout.BeginHorizontal();
+GUILayout.FlexibleSpace();
+if(GUILayout.Button ("Purchase from the Assetstore", GUILayout.Width(225))){
 //	AssetStore.Open("http://u3d.as/content/anda-soft/easy-roads3d-pro/1Ch");
 Application.OpenURL ("https://www.assetstore.unity3d.com/#/content/469");
 }
@@ -707,38 +781,42 @@ EditorGUILayout.Space();
 EditorGUILayout.BeginHorizontal();
 GUILayout.FlexibleSpace();
 if(GUILayout.Button ("Submit", GUILayout.Width(225))){
-EditorUtility.DisplayDialog("Newsletter Signup", OCDDOQCCDD0.NewsletterSignUp(target.uname, target.email), "Ok");
+EditorUtility.DisplayDialog("Newsletter Signup", OCQDCDCOCQ0.NewsletterSignUp(target.uname, target.email), "Ok");
 }
 GUILayout.FlexibleSpace();
 EditorGUILayout.EndHorizontal();
 }else{
-if(target.markers != target.OCCQOQDDDO.childCount){
-target.ODDCCCQCOC();
+if(target.markers != target.OOODODOQDC.childCount){
+target.ODDOOCQODD();
 }
 EditorGUILayout.Space();
-GUILayout.Box(" General Info", GUILayout.MinWidth(253), GUILayout.MaxWidth(1500), GUILayout.Height(20));
+
+EditorGUILayout.BeginVertical("Box");
+EditorGUILayout.LabelField(" General Info", EditorStyles.boldLabel);
+EditorGUILayout.EndVertical();
 
 if(RoadObjectScript.objectStrings == null){
 RoadObjectScript.objectStrings = new String[3];
 RoadObjectScript.objectStrings[0] = "Road Object"; RoadObjectScript.objectStrings[1]="River Object";RoadObjectScript.objectStrings[2]="Procedural Mesh Object";
 }
 if(target.distance == "-1"){
-var ar : String[]  = target.OQCODQCQOC.ODQQQDDDCQ(-1);
+var ar : String[]  = target.OODODOQQOD.ODODCOOQCO(-1);
 target.distance = ar[0];
 }
 EditorGUILayout.Space();
-GUILayout.Label(" Object Type: " + RoadObjectScript.objectStrings[target.objectType]);
-if(target.objectType == 0) GUILayout.Label(" Total Road Distance: " + target.distance.ToString() + " km");
+GUILayout.Label("    Object Type: " + RoadObjectScript.objectStrings[target.objectType]);
+if(target.objectType == 0) GUILayout.Label("    Total Road Distance: " + target.distance.ToString() + " km");
 }
+EditorGUILayout.Space();
 EditorGUILayout.Space();
 if (GUI.tooltip != "") GUI.Label(new Rect(Input.mousePosition.x, Screen.height - Input.mousePosition.y, 200, 40), GUI.tooltip);
 if (GUI.changed)
 {
-target.OCDCOQDCDQ = true;
+target.OQOQOOOCQO = true;
 }
 return markerMenuDisplay;
 }
-function OOCDDQQOOD(fwd: Vector3, targetDir: Vector3, up: Vector3) : float {
+function OODQDODQOC(fwd: Vector3, targetDir: Vector3, up: Vector3) : float {
 var perp: Vector3 = Vector3.Cross(fwd, targetDir);
 var dir: float = Vector3.Dot(perp, up);
 if (dir > 0.0) {
@@ -751,30 +829,35 @@ return 0.0;
 }
 function OnScene(){
 var cEvent : Event = Event.current;
-if(target.OODQCOQQQQ != -1  && Event.current.shift) target.OQDDCQCCDQ[target.OODQCOQQQQ] = true;
-if(target.OQDDCQCCDQ == null || target.OQDDCQCCDQ.Length == 0){
-target.OQDDCQCCDQ = new boolean[5];
-target.OODQCQCDQO = new boolean[5];
+if(target.OCCDDDDDCD != -1  && Event.current.shift) target.OOCCDOCCDC[target.OCCDDDDDCD] = true;
+if(target.OOCCDOCCDC == null || target.OOCCDOCCDC.Length == 0){
+target.OOCCDOCCDC = new boolean[5];
+target.OOCOQDCQQQ = new boolean[5];
 }
-if((cEvent.shift  && cEvent.type == EventType.mouseDown) || target.OQDDCQCCDQ[1])
+if((cEvent.shift  && cEvent.type == EventType.mouseDown) || target.OOCCDOCCDC[1])
 {
 var hit : RaycastHit;
 var mPos : Vector2 = cEvent.mousePosition;
 mPos.y = Screen.height - mPos.y - 40;
 var ray : Ray = Camera.current.ScreenPointToRay(mPos);
 
-if (Physics.Raycast (Camera.current.transform.position, ray.direction, hit, 3000))
 
+if (col.Raycast (ray, hit, 3000))
 {
-if(target.OQDDCQCCDQ[0]){
-go = target.OOOCOOQCOD(hit.point);
+if(target.OOCCDOCCDC[0]){
+var scrpts : RoadObjectScript[] = FindObjectsOfType(typeof(RoadObjectScript));
+if(scrpts.Length > 1){
+EditorUtility.DisplayDialog("Alert", "The Free version supports only one road editor object in the OCOCCQOCDD!\n\nPlease finalize the current road object or upgrade to the full version before creating a new road object.", "Close");
+return;
 }
-else if(target.OQDDCQCCDQ[1] && cEvent.type == EventType.mouseDown && cEvent.shift){
+go = target.OQCCDQOOCQ(hit.point);
+}
+else if(target.OOCCDOCCDC[1] && cEvent.type == EventType.mouseDown && cEvent.shift){
 
-target.ODDCCQDCQC(hit.point, true);
+target.OCQOOCOCQD(hit.point, true);
 }
-else if(target.OQDDCQCCDQ[1]  && cEvent.shift) target.ODDCCQDCQC(hit.point, false);
-else if(target.handleInsertFlag) target.handleInsertFlag = target.OQCODQCQOC.OOOCDCQDOC();
+else if(target.OOCCDOCCDC[1]  && cEvent.shift) target.OCQOOCOCQD(hit.point, false);
+else if(target.handleInsertFlag) target.handleInsertFlag = target.OODODOQQOD.OCOOCDDDQC();
 Selection.activeGameObject = target.obj.gameObject;
 }
 }
@@ -787,30 +870,30 @@ if (Physics.Raycast (Camera.current.transform.position, ray.direction, hit, 3000
 if(hit.collider.gameObject.GetComponent(typeof(Terrain)) != null){
 
 var t : Terrain = hit.collider.gameObject.GetComponent(typeof(Terrain));
-for(i = 0; i < OQCDOODQQQ.terrains.Length; i++){
+for(i = 0; i < OQOCOOCCQO.terrains.Length; i++){
 
-if(t == OQCDOODQQQ.terrains[i]){
-if(OQCDOODQQQ.terrains.Length > 1)OQCDOODQQQ.selectedTerrain = i + 1;
-else OQCDOODQQQ.selectedTerrain = i;
-OQCDOODQQQ.OOODOQCOOQ();
+if(t == OQOCOOCCQO.terrains[i]){
+if(OQOCOOCCQO.terrains.Length > 1)OQOCOOCCQO.selectedTerrain = i + 1;
+else OQOCOOCCQO.selectedTerrain = i;
+OQOCOOCCQO.ODQQQCQQCC();
 EditorUtility.SetDirty (target);
 }
 }
 }
 }
 }
-if(target.OQCQDODCQQ != target.obj || target.obj.name != target.OQQODDQQOO){
-target.OQCODQCQOC.OCQOQQOCCO();
-target.OQCQDODCQQ = target.obj;
-target.OQQODDQQOO = target.obj.name;
+if(target.OCCDOQCCQQ != target.obj || target.obj.name != target.OQQODQQDOO){
+target.OODODOQQOD.OQQOOCCDQO();
+target.OCCDOQCCQQ = target.obj;
+target.OQQODQQDOO = target.obj.name;
 }
-if(target.ODQDODOODQ != null){
-target.OQCODQCQOC.OOOCDCQDOC();
+if(target.OCCQQCQQOQ != null){
+target.OODODOQQOD.OCOOCDDDQC();
 
 }
-if(target.transform.position != Vector3.zero) target.transform.position = Vector3.zero;
+
 }
-static function ODCDDDDDDQ() : boolean{
+static function OQQCDOOQOQ() : boolean{
 
 var flag : boolean = false;
 var terrains : Terrain[]  = MonoBehaviour.FindObjectsOfType(typeof(Terrain));
@@ -819,9 +902,10 @@ if(!terrain.gameObject.GetComponent(EasyRoads3DTerrainID)){
 var terrainscript : EasyRoads3DTerrainID = terrain.gameObject.AddComponent.<EasyRoads3DTerrainID>();
 var id : String = UnityEngine.Random.Range(100000000,999999999).ToString();
 terrainscript.terrainid = id;
+//Debug.Log(id);
 flag = true;
 
-path = Directory.GetCurrentDirectory() + OOCDCOQDQC.backupFolder+ "/" + id;
+path = Directory.GetCurrentDirectory() + OOCCCOCCCC.backupFolder+ "/" + id;
 if( !Directory.Exists(path)){
 try{
 Directory.CreateDirectory( path);
@@ -837,8 +921,26 @@ if(Directory.Exists(path)){
 }
 }
 }
+
+OQQDCCCQDQ.terrainList.Clear();
+
+for(terrain in terrains) {
+var t:Terrains = new Terrains();
+t.terrain = terrain;
+if(!terrain.gameObject.GetComponent.<EasyRoads3DTerrainID>()){
+terrainscript = terrain.gameObject.AddComponent.<EasyRoads3DTerrainID>();
+id = UnityEngine.Random.Range(100000000,999999999).ToString();
+terrainscript.terrainid = id;
+t.id = id;
+}else{
+t.id = terrain.gameObject.GetComponent.<EasyRoads3DTerrainID>().terrainid;
 }
-static function OOQCOOQQDO(target){
+OQQDCCCQDQ.OOCDCOQQCD(t);
+}
+OQOCOOCCQO.OOCDCOQQCD();
+return flag;
+}
+static function OCDCQCQODD(target){
 EditorUtility.DisplayProgressBar("Build EasyRoads3D Object","Initializing", 0);
 
 scripts = FindObjectsOfType(typeof(RoadObjectScript));
@@ -847,84 +949,93 @@ for(script in scripts) {
 if(script.transform != target.transform) rObj.Add(script.transform);
 }
 if(target.ODODQOQO == null){
-target.ODODQOQO = target.OQCODQCQOC.ODDDCOQDCC();
-target.ODODQOQOInt = target.OQCODQCQOC.OCDDCDCCQD();
+target.ODODQOQO = target.OODODOQQOD.OOCCQODDOD();
+target.ODODQOQOInt = target.OODODOQQOD.OCOCDOODOC();
 }
-target.OQDODQOODQ(0.5f, true, false);
+target.OCQDOCOQDO(0.5f, true, false);
 
 
-if(OQCDOODQQQ.selectedTerrain == null || target.OQCODQCQOC.terrain == null)OQCDOODQQQ.OQOOCOCDDQ();
-target.OQCODQCQOC.OCDCCOCOQO();
+if(OQOCOOCCQO.selectedTerrain == null || target.OODODOQQOD.terrain == null)OQOCOOCCQO.OOCDCOQQCD();
+target.OODODOQQOD.OCQQDOQCDO();
 
-OQCDOODQQQ.OOCCDDOCCO(target.OQCODQCQOC.terrain, Directory.GetCurrentDirectory() + OOCDCOQDQC.backupFolder + "/" + OQCDOODQQQ.OCCQOOCOCQ(target.OQCODQCQOC.terrain) + "/"+target.OQCODQCQOC.OQQODDQQOO+"_splatMap");
+OQOCOOCCQO.OQDCQQCQQD(target.OODODOQQOD.terrain, Directory.GetCurrentDirectory() + OOCCCOCCCC.backupFolder + "/" + OQOCOOCCQO.OQOCQQQQQO(target.OODODOQQOD.terrain) + "/"+target.OODODOQQOD.OQQODQQDOO+"_splatMap");
 
 
-OOQDDDCQDD.ODQODDOOCC(target.OQCODQCQOC.terrain, Directory.GetCurrentDirectory() + OOCDCOQDQC.backupFolder+ "/" + OQCDOODQQQ.OCCQOOCOCQ(target.OQCODQCQOC.terrain) + "/"+target.OQCODQCQOC.OQQODDQQOO+"_heightmap.backup");
-var hitOCOCCDOQQD : List.<tPoint> = target.OQCODQCQOC.OQCCCOQCOO(Vector3.zero, target.raise, target.obj, target.OOQDOOQQ, rObj, target.handleVegetation);
+OQQDODDCQC.OQOQQCDDDD(target.OODODOQQOD.terrain, Directory.GetCurrentDirectory() + OOCCCOCCCC.backupFolder+ "/" + OQOCOOCCQO.OQOCQQQQQO(target.OODODOQQOD.terrain) + "/"+target.OODODOQQOD.OQQODQQDOO+"_heightmap.backup");
+var hitODQCCQQQDD : List.<tPoint> = target.OODODOQQOD.ODQCOOQQDD(Vector3.zero, target.raise, target.obj, target.OOQDOOQQ, rObj, target.handleVegetation);
 var changeArr : List.<Vector3> = new List.<Vector3>();
-var stepsf : float = Mathf.Floor(hitOCOCCDOQQD.Count / 10);
+var stepsf : float = Mathf.Floor(hitODQCCQQQDD.Count / 10);
 var steps : int = Mathf.RoundToInt(stepsf);
 
 
 for(i = 0; i < 10;i++){
-changeArr = target.OQCODQCQOC.OOCDDDQQQD(hitOCOCCDOQQD, i * steps, steps, changeArr);
+changeArr = target.OODODOQQOD.ODCCCQQQCC(hitODQCCQQQDD, i * steps, steps, changeArr);
 EditorUtility.DisplayProgressBar("Build EasyRoads3D Object","Updating Terrain", i * 10);
 }
 
-changeArr = target.OQCODQCQOC.OOCDDDQQQD(hitOCOCCDOQQD, 10 * steps, hitOCOCCDOQQD.Count - (10 * steps), changeArr);
-target.OQCODQCQOC.OQCQCCCOOQ(changeArr, rObj);
-if(target.OQCODQCQOC.handleVegetation){
-target.OQCODQCQOC.OCCDDQCOCO();
+changeArr = target.OODODOQQOD.ODCCCQQQCC(hitODQCCQQQDD, 10 * steps, hitODQCCQQQDD.Count - (10 * steps), changeArr);
+target.OODODOQQOD.OODQQQOCDC(changeArr, rObj);
+if(target.OODODOQQOD.handleVegetation){
+target.OODODOQQOD.OOOOQDQQCQ();
 
-path = Directory.GetCurrentDirectory() + OOCDCOQDQC.backupFolder+ "/" + OQCDOODQQQ.OCCQOOCOCQ(target.OQCODQCQOC.terrain) + "/"+target.OQCODQCQOC.OCDCQCDDDO.OQQODDQQOO;
-OOCDCOQDQC.OQDDODQOOQ(Directory.GetCurrentDirectory() + OOCDCOQDQC.backupFolder);
-OOCDCOQDQC.OQDDODQOOQ(Directory.GetCurrentDirectory() + OOCDCOQDQC.backupFolder+ "/" + OQCDOODQQQ.OCCQOOCOCQ(target.OQCODQCQOC.terrain));
-OOQDDDCQDD.ODCDDCDCQD(target.OQCODQCQOC.OQQDCCOCCO.ToArray(), target.OQCODQCQOC.ODQDDQQOQQ, path);
+path = Directory.GetCurrentDirectory() + OOCCCOCCCC.backupFolder+ "/" + OQOCOOCCQO.OQOCQQQQQO(target.OODODOQQOD.terrain) + "/"+target.OODODOQQOD.OQDODOQDOD.OQQODQQDOO;
+OOCCCOCCCC.OCOCQDQCQQ(Directory.GetCurrentDirectory() + OOCCCOCCCC.backupFolder);
+OOCCCOCCCC.OCOCQDQCQQ(Directory.GetCurrentDirectory() + OOCCCOCCCC.backupFolder+ "/" + OQOCOOCCQO.OQOCQQQQQO(target.OODODOQQOD.terrain));
+OQQDODDCQC.OOQQODOQCQ(target.OODODOQQOD.ODCOOODDQO.ToArray(), target.OODODOQQOD.ODOCQDCOCQ, path);
 }
 
-target.OQCCOODCDO();
+target.OOCQDDOQOC();
 
-target.OQCODQCQOC.ODODDCCCQC(target.transform, true);
-target.OQCODQCQOC.OOCCQQODQO();
+target.OODODOQQOD.OODDCODQOD(target.transform, true);
+target.OODODOQQOD.OQQCQQOQDD();
 EditorUtility.ClearProgressBar();
 
 }
-function OCOCCCDDDO(target){
+function OOQQOCDQCQ(target){
 EditorUtility.DisplayProgressBar("Restore EasyRoads3D Object","Restoring terrain data", 0f);
-target.OQDODQOODQ(target.geoResolution, false, false);
+target.OCQDOCOQDO(target.geoResolution, false, false);
 
-if(target.OQCODQCQOC.OQQQOODDCC != null && target.OQCODQCQOC != null){
-if(target.OQCODQCQOC.editRestore && File.Exists(Directory.GetCurrentDirectory() + OOCDCOQDQC.backupFolder+ "/" + OQCDOODQQQ.OCCQOOCOCQ(target.OQCODQCQOC.terrain) + "/"+target.OQCODQCQOC.OQQODDQQOO+"_heightmap.backup")){
-OOQDDDCQDD.OCDDQCDODO(target.OQCODQCQOC.terrain, Directory.GetCurrentDirectory() + OOCDCOQDQC.backupFolder+ "/" + OQCDOODQQQ.OCCQOOCOCQ(target.OQCODQCQOC.terrain) + "/"+target.OQCODQCQOC.OQQODDQQOO+"_heightmap.backup");
-}else if(target.OQCODQCQOC.editRestore){
+if(target.OODODOQQOD.OCQCQCCQCQ != null && target.OODODOQQOD != null){
+if(target.OODODOQQOD.editRestore && File.Exists(Directory.GetCurrentDirectory() + OOCCCOCCCC.backupFolder+ "/" + OQOCOOCCQO.OQOCQQQQQO(target.OODODOQQOD.terrain) + "/"+target.OODODOQQOD.OQQODQQDOO+"_heightmap.backup")){
+OQQDODDCQC.OOCOQDOQCC(target.OODODOQQOD.terrain, Directory.GetCurrentDirectory() + OOCCCOCCCC.backupFolder+ "/" + OQOCOOCCQO.OQOCQQQQQO(target.OODODOQQOD.terrain) + "/"+target.OODODOQQOD.OQQODQQDOO+"_heightmap.backup");
+}else if(target.OODODOQQOD.editRestore){
 Debug.LogWarning("The original terrain heightmap data file was not found. If necessary you may restore the terrain data by using Undo or, if the terrain backup is up to date, through the EasyRoads3D Menu");
 }
 }
 
-if(target.OQCODQCQOC != null){
-target.OQCODQCQOC.OQCODQODOQ();
-if(target.OQCODQCQOC.handleVegetation && target.OQCODQCQOC.editRestore){
-if(target.OQCODQCQOC.OQQDCCOCCO != null){
-if(target.OQCODQCQOC.OQQDCCOCCO.Count == 0){
+if(target.OODODOQQOD != null){
+target.OODODOQQOD.OQODQOQOOQ();
+if(target.OODODOQQOD.handleVegetation && target.OODODOQQOD.editRestore){
+if(target.OODODOQQOD.ODCOOODDQO != null){
+if(target.OODODOQQOD.ODCOOODDQO.Count == 0){
 // get treeData from file
-path = Directory.GetCurrentDirectory() + OOCDCOQDQC.backupFolder+ "/" + OQCDOODQQQ.OCCQOOCOCQ(target.OQCODQCQOC.terrain) + "/"+target.OQCODQCQOC.OQQODDQQOO;
-target.OQCODQCQOC.OQQDCCOCCO = OOQDDDCQDD.ODCCCCQQCQ(path);
+path = Directory.GetCurrentDirectory() + OOCCCOCCCC.backupFolder+ "/" + OQOCOOCCQO.OQOCQQQQQO(target.OODODOQQOD.terrain) + "/"+target.OODODOQQOD.OQQODQQDOO;
+target.OODODOQQOD.ODCOOODDQO = OQQDODDCQC.OOOCQCQDDQ(path);
 }
-if(target.OQCODQCQOC.OQQDCCOCCO != null) target.OQCODQCQOC.OCCOCQQDOO();
+if(target.OODODOQQOD.ODCOOODDQO != null) target.OODODOQQOD.OOCODDQDOC();
 
-if(target.OQCODQCQOC.ODQDDQQOQQ.Count == 0){
+if(target.OODODOQQOD.ODOCQDCOCQ.Count == 0){
 // get detailData from file
 
-path = Directory.GetCurrentDirectory() + OOCDCOQDQC.backupFolder+ "/" + OQCDOODQQQ.OCCQOOCOCQ(target.OQCODQCQOC.terrain) + "/"+target.OQCODQCQOC.OQQODDQQOO;
-target.OQCODQCQOC.ODQDDQQOQQ = OOQDDDCQDD.ODQQDOCODQ(path);
+path = Directory.GetCurrentDirectory() + OOCCCOCCCC.backupFolder+ "/" + OQOCOOCCQO.OQOCQQQQQO(target.OODODOQQOD.terrain) + "/"+target.OODODOQQOD.OQQODQQDOO;
+target.OODODOQQOD.ODOCQDCOCQ = OQQDODDCQC.ODODCQCCOC(path);
 
 }
-if(target.OQCODQCQOC.ODQDDQQOQQ != null) target.OQCODQCQOC.OQCDDCCCOD();
+if(target.OODODOQQOD.ODOCQDCOCQ != null) target.OODODOQQOD.OCQDDDDDQC();
 }
 }
 }
 target.ODODDDOO = false;
 
 EditorUtility.ClearProgressBar();
+}
+function GetExtensionPath() : String{
+var extensionPath  = Path.GetDirectoryName( AssetDatabase.GetAssetPath( MonoScript.FromScriptableObject( this ) ) );
+
+extensionPath = extensionPath.Replace("lib", "");
+extensionPath = extensionPath.Replace("Editor", "");
+extensionPath = extensionPath.Replace("scripts", "");
+
+return "/" + extensionPath;
 }
 }

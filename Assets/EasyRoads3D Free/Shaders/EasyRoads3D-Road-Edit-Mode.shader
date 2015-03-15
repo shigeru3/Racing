@@ -6,7 +6,7 @@ Properties {
 SubShader {
 	Tags { 
 	
-		"Queue"="Overlay+150" 
+		"Queue"="Overlay+250" 
 	}
 	LOD 200
 //	Offset -1, -5

@@ -3,16 +3,14 @@ Properties {
 	_Color ("Main Color", Color) = (1,1,1,1)
 }
 SubShader {
-	Tags { "RenderType"="Opaque" "Queue"="Overlay+140"}
+	Tags { "Queue"="Overlay+25" }
 	LOD 200
-	
-	ZTest Always
-
+//	Offset -5, -5
+ZTest Always
 
 CGPROGRAM
 #pragma surface surf Lambert
 
-sampler2D _MainTex;
 fixed4 _Color;
 
 struct Input {
@@ -29,3 +27,7 @@ ENDCG
 
 Fallback "VertexLit"
 }
+
+
+
+

@@ -3,7 +3,7 @@ class TerrainEditorScript extends Editor
 {
 function OnSceneGUI()
 {
-if(Event.current.shift && RoadObjectScript.OQCQDODCQQ != null) Selection.activeGameObject = RoadObjectScript.OQCQDODCQQ.gameObject;
-else RoadObjectScript.OQCQDODCQQ = null;
+if(Event.current.shift && RoadObjectScript.OCCDOQCCQQ != null) Selection.activeGameObject = RoadObjectScript.OCCDOQCCQQ.gameObject;
+else RoadObjectScript.OCCDOQCCQQ = null;
 }
 }

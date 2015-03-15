@@ -10,10 +10,13 @@ public class CarController : MonoBehaviour {
 	[SerializeField]
 	private GameObject manager;
 	private RaceManager raceManager;
+	private NavMeshAgent agent;
 	// Use this for initialization
 	void Start () {
 		controller = GetComponent<CharacterController> ();
 		raceManager = manager.GetComponent<RaceManager> ();
+		agent = GetComponent<NavMeshAgent> ();
+		//agent.destination = new Vector3 (150, 0, 8);
 	}
 
 	// Update is called once per frame

@@ -19,6 +19,7 @@ private var ext : String[] = [".PSD", ".TIFF",".JPG",".TGA",".PNG",".GIF",".BMP"
 static public var window : ERTextureWindow;
 static private var roadscript : RoadObjectScript;
 public static var  test : int;
+private var assetPath;
 static function Init (scr : RoadObjectScript) {
 
 roadscript = scr;
@@ -29,7 +30,7 @@ public function ERTextureWindow() {
 
 instance = this;
 title = "Road Materials";
-GetFiles() ;
+
 
 
 
@@ -38,6 +39,7 @@ function OnDestroy(){
 instance = null;
 }
 function OnGUI () {
+if(roadTextures == null)GetFiles() ;
 if(shaders1 == null){
 shaders1 = new String[1];
 shaders1[0] = "Diffuse";
@@ -87,11 +89,11 @@ if(k >= roadTextures.length) break;
 EditorGUILayout.EndScrollView();
 }
 function GetFiles() {
-
-
 var textures : List.<String>  = new List.<String>();
-var dir : DirectoryInfo= new DirectoryInfo(Application.dataPath + "/EasyRoads3D/Textures/Road Textures/");
 
+var dir : DirectoryInfo= new DirectoryInfo(Directory.GetCurrentDirectory() + OOCCCOCCCC.extensionPath + "Textures/Road Textures/");
+
+assetPath = OOCCCOCCCC.extensionPath.Substring(1, OOCCCOCCCC.extensionPath.Length - 1);
 
 var extStrings : String[] = new String[1];
 extStrings[0] = "*.*";
@@ -123,7 +125,7 @@ var i : int = 0;
 for(file in dtextures){
 
 //		Debug.Log("/Assets/EasyRoads3D/Textures/Road Textures/" + file);
-roadTextures[i] = AssetDatabase.LoadAssetAtPath("Assets/EasyRoads3D/Textures/Road Textures/" + file, typeof(Texture2D));
+roadTextures[i] = AssetDatabase.LoadAssetAtPath(assetPath + "Textures/Road Textures/" + file, typeof(Texture2D));
 
 var arr = file.Split("_"[0]);
 var extr : String = "";
@@ -187,7 +189,7 @@ btex = fb;
 break;
 }
 }
-mat.SetTexture("_BumpMap",AssetDatabase.LoadAssetAtPath("Assets/EasyRoads3D/Textures/Road Textures/" + btex, typeof(Texture2D)));
+mat.SetTexture("_BumpMap",AssetDatabase.LoadAssetAtPath(assetPath + "Textures/Road Textures/" + btex, typeof(Texture2D)));
 }else if(shader == 2){
 mat.shader = Shader.Find ("EasyRoads3D/Bumped Specular");
 btex = "";
@@ -201,7 +203,7 @@ break;
 roadscript.roadTexture = tex;
 mat.mainTexture = tex;
 matEdit.mainTexture = tex;
-var road : GameObject = roadscript.OQCODQCQOC.road;
+var road : GameObject = roadscript.OODODOQQOD.road;
 if(road != null){
 if(road.transform.childCount > 0){
 for(child in road.transform){

@@ -18,11 +18,11 @@ public float qt;
 public float ODDQODOO;
 public float lt;
 public float ODDOQOQQ;
-public bool OQCQOQCQCC;
+public bool OOOCCQCDQO;
 public bool ODQDOQOO;
-public float OQDOCODDQO;
+public float OCCQCQOCQQ;
 public float ODOOQQOO;
-public Transform[] ODQDODOODQs;
+public Transform[] OCCQQCQQOQs;
 public float[] trperc;
 
 
@@ -30,7 +30,7 @@ public Vector3 oldPos = Vector3.zero;
 public bool autoUpdate;
 public bool changed;
 public Transform surface;
-public bool ODQQCDQDQD;
+public bool OQQODCQODC;
 Vector3 position;
 private bool updated;
 private int frameCount;
@@ -55,8 +55,8 @@ public float[] ODOQODOO;
 public float[] ODDOQDO;
 public int markerNum;
 public string distance = "0";
-public string ODODQDQDDC = "0";
-public string OCOCCDDCOD = "0";
+public string ODCDDOCCDD = "0";
+public string OQOOCQQDOO = "0";
 public bool newSegment = false;
 public float floorDepth = 2f;
 public float oldFloorDepth = 2f;
@@ -73,28 +73,28 @@ foreach(Transform child in transform) surface = child;
 void OnDrawGizmos()
 {
 if(objectScript != null){
-if(!objectScript.OOCQCCQOQQ){  
+if(!objectScript.OCCDOQDQQD){  
 
 
 Vector3 v;
 if(snapMarker){
-if(OQCDOODQQQ.terrain != null){
+if(OQOCOOCCQO.terrain != null){
 v = transform.position;
-v.y = OQCDOODQQQ.terrain.SampleHeight(v);
+v.y = OQOCOOCCQO.terrain.SampleHeight(v)+ OQOCOOCCQO.terrain.transform.position.y;
 transform.position = v;
 }
 }
 
 Vector3 change = transform.position - oldPos;
-if(OQCQOQCQCC && oldPos != Vector3.zero && change != Vector3.zero){
+if(OOOCCQCDQO && oldPos != Vector3.zero && change != Vector3.zero){
 int i = 0;
-foreach(Transform tr in ODQDODOODQs){
+foreach(Transform tr in OCCQQCQQOQs){
 tr.position += change * trperc[i];
 
 if(snapMarker){
-if(OQCDOODQQQ.terrain != null){
+if(OQOCOOCCQO.terrain != null){
 v = tr.position;
-v.y = OQCDOODQQQ.terrain.SampleHeight(v);
+v.y = OQOCOOCCQO.terrain.SampleHeight(v);
 tr.position = v;
 }
 }
@@ -104,8 +104,8 @@ i++;
 }
 if(oldPos != Vector3.zero && change != Vector3.zero){
 changed = true;
-if(objectScript.OOCQCCQOQQ){
-objectScript.OQCODQCQOC.specialRoadMaterial = true;
+if(objectScript.OCCDOQDQQD){
+objectScript.OODODOQQOD.specialRoadMaterial = true;
 }
 }
 oldPos = transform.position;
@@ -117,8 +117,8 @@ transform.position = oldPos;
 void SetObjectScript(){
 
 objectScript = transform.parent.parent.GetComponent<RoadObjectScript>();
-if(objectScript.OQCODQCQOC == null){
-objectScript.OCOOCQODQD(null, null, null);
+if(objectScript.OODODOQQOD == null){
+objectScript.OOCCOODQQD(null, null, null);
 }
 }
 void GetMarkerCount(){
@@ -168,8 +168,8 @@ oldFloorDepth = floorDepth;
 }
 public bool InSelected(){
 
-for(int i = 0; i < objectScript.ODQDODOODQs.Length; i++){
-if(objectScript.ODQDODOODQs[i] == this.gameObject)return true;
+for(int i = 0; i < objectScript.OCCQQCQQOQs.Length; i++){
+if(objectScript.OCCQQCQQOQs[i] == this.gameObject)return true;
 }
 return false;
 }

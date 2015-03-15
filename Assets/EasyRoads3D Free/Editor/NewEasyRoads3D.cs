@@ -3,19 +3,20 @@ using System.Collections;
 using UnityEditor;
 using System.IO;
 using System;
+using EasyRoads3D;
 public class NewEasyRoads3D : EditorWindow
 {
 public static NewEasyRoads3D instance;
 private Vector3 scroll;
-public GUISkin OODCOCOOCC;
-public GUISkin OQQQCCOOOQ;
-private string objectname = "RoadObject01";
+public GUISkin OOOODDDODC;
+public GUISkin OCOQCDCDCO;
+private string objectname = "";
 private string backupFolder = "/EasyRoads3D";
 private int objectType = 0;
 private bool OOQDOOQQ;
 public NewEasyRoads3D()
 {
-objectname = GetNewRoadName();
+
 
 
 
@@ -40,15 +41,16 @@ return instance;
 }
 public void OnGUI()
 {
-if(OODCOCOOCC == null){
-OQQQCCOOOQ = GUI.skin;
-OODCOCOOCC = (GUISkin)Resources.Load("ER3DSkin", typeof(GUISkin));
+if(OOOODDDODC == null){
+OCOQCDCDCO = GUI.skin;
+OOOODDDODC = (GUISkin)Resources.Load("ER3DSkin", typeof(GUISkin));
 }
+if(objectname == "") objectname = GetNewRoadName();
 
 
 GUILayout.Space(15);
 GUILayout.Box("", GUILayout.MinWidth(340), GUILayout.MaxWidth(340), GUILayout.Height(70));
-GUI.skin = OQQQCCOOOQ;
+GUI.skin = OCOQCDCDCO;
 GUILayout.BeginArea  (new Rect (5, 5, 336, 250));
 GUILayout.Label("Set a name for the new EasyRoads3D Road Object");
 GUILayout.Space(65);
@@ -114,8 +116,13 @@ GUILayout.EndArea();
 }
 public string GetNewRoadName(){
 
+if(EditorPrefs.GetInt("ER3DbckLocation", 0) == 1){
+if(OOCCCOCCCC.extensionPath == ""){
+OOCCCOCCCC.extensionPath = GetExtensionPath();
+}
+backupFolder = OOCCCOCCCC.extensionPath + "Backups";
+}
 
-if(EditorPrefs.GetInt("ER3DbckLocation", 0) == 1)backupFolder = "/Assets/EasyRoads3D/Backups";
 string path = Directory.GetCurrentDirectory() + backupFolder;
 if( !Directory.Exists(path)){
 try{
@@ -145,5 +152,14 @@ string n;
 if(c < 10) n = "RoadObject0" + c.ToString();
 else n = "RoadObject" + c.ToString();
 return n;
+}
+public string GetExtensionPath(){
+string extensionPath  = Path.GetDirectoryName( AssetDatabase.GetAssetPath( MonoScript.FromScriptableObject( this ) ) );
+
+extensionPath = extensionPath.Replace("lib", "");
+extensionPath = extensionPath.Replace("Editor", "");
+extensionPath = extensionPath.Replace("scripts", "");
+
+return "/" + extensionPath;
 }
 }

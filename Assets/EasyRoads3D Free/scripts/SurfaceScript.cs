@@ -8,6 +8,6 @@ public class SurfaceScript : MonoBehaviour {
 		else mat = (Material)MonoBehaviour.Instantiate(Resources.Load("surfaceAlphaMaterial", typeof(Material)));
 		Color c = mat.color;
 		c.a = transform.parent.GetComponent<MarkerScript>().objectScript.surfaceOpacity;
-		gameObject.GetComponent<Renderer>().sharedMaterial = mat;
+		gameObject.GetComponent<MeshRenderer>().sharedMaterial = mat;
 	}	
 }
