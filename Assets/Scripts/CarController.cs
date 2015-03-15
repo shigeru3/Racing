@@ -24,7 +24,7 @@ public class CarController : MonoBehaviour {
 		if (raceManager.State != RaceStates.go) {
 			return;
 		}
-
+		agent.destination = new Vector3 (156, 1, 180);
 		if (controller.isGrounded) {
 			transform.Rotate (0, Input.GetAxis ("Horizontal") * rotateSpeed, 0);
 
@@ -32,7 +32,7 @@ public class CarController : MonoBehaviour {
 			controller.SimpleMove (transform.forward * curSpeed);
 		}
 		moveDirection.y -= gravity * Time.deltaTime;
-		controller.Move (moveDirection * Time.deltaTime);
+		//controller.Move (moveDirection * Time.deltaTime);
 	}
 
 	void OnControllerColliderHit(ControllerColliderHit collision) {
