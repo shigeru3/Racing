@@ -33,7 +33,7 @@ public class CarController : MonoBehaviour {
 	}
 
 	void OnControllerColliderHit(ControllerColliderHit collision) {
-		if (collision.gameObject.name == "goal") {
+		if (collision.gameObject.name == "Goal(Clone)") {
 			raceManager.State = RaceStates.goal;
 		}
 	}
