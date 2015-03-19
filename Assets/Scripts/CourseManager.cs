@@ -24,19 +24,8 @@ public class CourseManager : MonoBehaviour {
 			}
 			i++;
 		}
-		/*
-		GameObject p = Instantiate(Resources.Load("Plane")) as GameObject;
-		p.transform.rotation = Quaternion.LookRotation (points [1] - points [0]);
-		float distance = Vector3.Distance (points [0], points [1]);
-		p.transform.localScale = new Vector3 (0.8f, 1, distance / 10);
-		p.transform.position = (points [1] - points [0]) / 2;
-
-		GameObject p2 = Instantiate (Resources.Load ("Plane")) as GameObject;
-		p2.transform.rotation = Quaternion.LookRotation(points[2] - points[1]);
-		distance = Vector3.Distance (points [1], points [2]);
-		p2.transform.localScale = new Vector3 (0.8f, 1, distance / 10);
-		p2.transform.position = (points [2] - points [1]) / 2 + points[1];
-		*/
+		GameObject goal = Instantiate (Resources.Load ("Goal")) as GameObject;
+		goal.transform.position = new Vector3 (points [i].x, 0.04f, points [i].z);
 	}
 	
 	// Update is called once per frame
